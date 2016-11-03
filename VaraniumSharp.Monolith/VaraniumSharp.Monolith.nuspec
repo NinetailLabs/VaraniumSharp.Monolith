@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <metadata xmlns="http://schemas.microsoft.com/packaging/21.0.07/nuspec.xsd">
+      <id>VaraniumSharp.Monolith</id>
+      <version>0.0.0</version>
+      <authors>NineTail Labs</authors>
+      <owners>NineTail Labs</owners>
+      <title>VaraniumSharp.Monolith</title>
+      <description>Library that can serve as a chassis for building web services.</description>
+      <summary>Library that can serve as a chassis for building web services.</summary>
+      <licenseUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Monolith/master/LICENSE</licenseUrl>
+      <projectUrl>https://github.com/NinetailLabs/VaraniumSharp.Monolith</projectUrl>
+      <iconUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Monolith/develop/icon.png</iconUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <copyright>Copyright (c) NineTail Labs 2016</copyright>
+      <releaseNotes></releaseNotes>
+      <tags>C# VaraniumSharp Varanium VaraniumSharp.Monolith Monolith</tags>
+
+    <dependencies>
+        <dependency id="VaraniumSharp.Initiator" version="1.0.4"/>
+    </dependencies>
+
+   </metadata>
+
+   <files>
+      <file src="/bin/Release/VaraniumSharp.Monolith.dll" target="lib/net462" />
+      <file src="/bin/Release/VaraniumSharp.Monolith.xml" target="lib/net462" />      
+   </files>
+</package>
