@@ -3,7 +3,7 @@
     /// <summary>
     /// Contains keys for reading configuration values from App.config
     /// </summary>
-    public class ConfigurationKeys
+    public static class ConfigurationKeys
     {
         /// <summary>
         /// Host address of the service
