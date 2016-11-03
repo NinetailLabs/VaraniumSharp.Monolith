@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{9CFC4DB8-1EE9-4B41-B223-29EDC1963B00}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaraniumSharp.Monolith", "VaraniumSharp.Monolith\VaraniumSharp.Monolith.csproj", "{FC79F73B-63C9-4708-A2E5-6313C7C20C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaraniumSharp.Monolith.Tests", "VaraniumSharp.Monolith.Tests\VaraniumSharp.Monolith.Tests.csproj", "{AC13CD26-EDB1-422F-BF9B-39743528965D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC79F73B-63C9-4708-A2E5-6313C7C20C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC79F73B-63C9-4708-A2E5-6313C7C20C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC79F73B-63C9-4708-A2E5-6313C7C20C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC79F73B-63C9-4708-A2E5-6313C7C20C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC13CD26-EDB1-422F-BF9B-39743528965D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC13CD26-EDB1-422F-BF9B-39743528965D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC13CD26-EDB1-422F-BF9B-39743528965D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC13CD26-EDB1-422F-BF9B-39743528965D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
