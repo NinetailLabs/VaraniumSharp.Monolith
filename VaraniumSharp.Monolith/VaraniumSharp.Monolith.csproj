@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SemVer.MSBuild.props" />
+    <Compile Include="Configuration\HostConfiguration.cs" />
+    <Compile Include="Enumerations\ConfigurationKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
