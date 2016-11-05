@@ -3,7 +3,7 @@ using Topshelf.Runtime;
 namespace VaraniumSharp.Monolith.Interfaces
 {
     /// <summary>
-    /// Configuration for TopShelf service
+    /// topShelfConfiguration for TopShelf service
     /// </summary>
     public interface ITopShelfConfiguration
     {

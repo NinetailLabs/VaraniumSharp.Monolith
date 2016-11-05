@@ -18,6 +18,7 @@ namespace VaraniumSharp.Monolith.Tests.Helpers
             var loggerFixture = new Mock<ILogger>();
             //This is used by TopShelf
             loggerFixture.Setup(t => t.ForContext("SourceContext", It.IsAny<string>(), false)).Returns(loggerFixture.Object);
+            loggerFixture.Setup(t => t.ForContext<object>()).Returns(loggerFixture.Object);
             Log.Logger = loggerFixture.Object;
             return new Tuple<ILogger, Mock<ILogger>>(oldLog, loggerFixture);
         }

@@ -1,12 +1,16 @@
-﻿using VaraniumSharp.Extensions;
+﻿using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
+using VaraniumSharp.Extensions;
 using VaraniumSharp.Monolith.Enumerations;
+using VaraniumSharp.Monolith.Interfaces;
 
 namespace VaraniumSharp.Monolith.Configuration
 {
     /// <summary>
     /// Provides configuration values for setting up a Host
     /// </summary>
-    public class HostConfiguration
+    [AutomaticContainerRegistration(typeof(IHostConfiguration), Reuse = ServiceReuse.Singleton)]
+    public class HostConfiguration : IHostConfiguration
     {
         #region Properties
 

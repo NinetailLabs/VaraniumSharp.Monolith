@@ -12,7 +12,12 @@ namespace VaraniumSharp.Monolith.Interfaces
         /// <summary>
         /// Gets the configuration used by the TopShelf service
         /// </summary>
-        ITopShelfConfiguration Configuration { get; }
+        ITopShelfConfiguration TopShelfConfiguration { get; }
+
+        /// <summary>
+        /// Get the topShelfConfiguration used by Owin
+        /// </summary>
+        IHostConfiguration HostConfiguration { get; }
 
         #endregion
 

@@ -54,7 +54,7 @@ namespace VaraniumSharp.Monolith.HostSetup
                 });
                 x.RunAsLocalService();
 
-                var serviceConfiguration = service.Configuration;
+                var serviceConfiguration = service.TopShelfConfiguration;
                 x.SetDescription(serviceConfiguration.Name);
                 x.SetDisplayName(serviceConfiguration.DisplayName);
                 x.SetServiceName(serviceConfiguration.Name);

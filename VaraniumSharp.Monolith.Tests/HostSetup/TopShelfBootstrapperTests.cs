@@ -54,7 +54,7 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
 
             public void SetupInstance()
             {
-                TopShelfServiceMock.Setup(t => t.Configuration).Returns(GetTopShelfConfiguration);
+                TopShelfServiceMock.Setup(t => t.TopShelfConfiguration).Returns(GetTopShelfConfiguration);
                 Instance = new TopShelfBootstrapper(GeTopShelfService);
             }
         }

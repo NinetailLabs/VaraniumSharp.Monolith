@@ -1,6 +1,8 @@
-﻿using VaraniumSharp.Attributes;
+﻿using System;
+using Microsoft.Owin.Hosting;
+using Serilog;
+using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
-using VaraniumSharp.Monolith.Configuration;
 using VaraniumSharp.Monolith.Interfaces;
 
 namespace VaraniumSharp.Monolith.HostSetup
@@ -16,10 +18,13 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="configuration"></param>
-        public OwinHostTopShelfService(TopShelfConfiguration configuration)
+        /// <param name="topShelfConfiguration"></param>
+        /// <param name="hostConfiguration"></param>
+        public OwinHostTopShelfService(ITopShelfConfiguration topShelfConfiguration, IHostConfiguration hostConfiguration)
         {
-            Configuration = configuration;
+            TopShelfConfiguration = topShelfConfiguration;
+            HostConfiguration = hostConfiguration;
+            _logger = Log.Logger.ForContext<OwinHostTopShelfService>();
         }
 
         #endregion
@@ -27,9 +32,14 @@ namespace VaraniumSharp.Monolith.HostSetup
         #region Properties
 
         /// <summary>
-        /// Gets the configuration used by the TopShelf service
+        /// Get the topShelfConfiguration used by the TopShelf service
         /// </summary>
-        public ITopShelfConfiguration Configuration { get; }
+        public ITopShelfConfiguration TopShelfConfiguration { get; }
+
+        /// <summary>
+        /// Get the topShelfConfiguration used by Owin
+        /// </summary>
+        public IHostConfiguration HostConfiguration { get; }
 
         #endregion
 
@@ -40,7 +50,16 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// </summary>
         public void Start()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                _logger.Information("Starting on {URL}", HostConfiguration.HostUrl);
+                _webbApp = WebApp.Start<OwinStartup>(HostConfiguration.HostUrl);
+                _logger.Information("Startup completed");
+            }
+            catch (Exception exception)
+            {
+                _logger.Fatal(exception, "An error occured during startup");
+            }
         }
 
         /// <summary>
@@ -48,8 +67,16 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// </summary>
         public void Stop()
         {
-            throw new System.NotImplementedException();
+            _logger.Information("Shutting down");
+            _webbApp?.Dispose();
         }
+
+        #endregion
+
+        #region Variables
+
+        private IDisposable _webbApp;
+        private readonly ILogger _logger;
 
         #endregion
     }
