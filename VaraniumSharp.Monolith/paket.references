@@ -1,2 +1,7 @@
-﻿SemVer.Git.MSBuild
+﻿Microsoft.Owin.Hosting
+Microsoft.Owin.Host.HttpListener
+Nancy.Owin
+SemVer.Git.MSBuild
 VaraniumSharp.Initiator
+Topshelf
+TopShelf.Serilog

@@ -16,7 +16,7 @@ namespace VaraniumSharp.Monolith.Tests.Configuration
             const string host = "http://localhost";
             const int port = 1337;
 
-             ApplicationConfigurationHelper.AdjustKeys(ConfigurationKeys.ServiceHost, host);
+            ApplicationConfigurationHelper.AdjustKeys(ConfigurationKeys.ServiceHost, host);
             ApplicationConfigurationHelper.AdjustKeys(ConfigurationKeys.ServicePort, port.ToString(CultureInfo.InvariantCulture));
 
             // act

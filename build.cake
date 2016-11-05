@@ -89,8 +89,8 @@ Task("UnitTest")
 			{
 				ReportType = DotCoverReportType.HTML
 			}
-				.WithFilter("+:VaraniumSharp")
-    			.WithFilter("-:VaraniumSharp.Tests")
+				.WithFilter("+:VaraniumSharp.Monolith")
+    			.WithFilter("-:VaraniumSharp.Monolith.Tests")
 		);
 
 		if(FileExists(testErrorFile) && FileReadLines(testErrorFile).Count() > 0)
