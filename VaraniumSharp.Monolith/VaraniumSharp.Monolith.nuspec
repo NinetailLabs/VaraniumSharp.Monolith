@@ -17,6 +17,9 @@
       <tags>C# VaraniumSharp Varanium VaraniumSharp.Monolith Monolith</tags>
 
     <dependencies>
+        <dependency id="Microsoft.Owin.Hosting" version="3.0.1"/>
+        <dependency id="Microsoft.Owin.Host.HttpListener" version="3.0.1"/>
+        <dependency id="Nancy.Owin" version="1.4.1"/>
         <dependency id="Topshelf" version="4.0.3"/>
         <dependency id="Topshelf.Serilog" version="4.0.3"/>
         <dependency id="VaraniumSharp.Initiator" version="1.0.4"/>
