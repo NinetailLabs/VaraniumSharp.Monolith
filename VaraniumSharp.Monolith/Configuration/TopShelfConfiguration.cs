@@ -3,6 +3,7 @@ using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
 using VaraniumSharp.Extensions;
 using VaraniumSharp.Monolith.Enumerations;
+using VaraniumSharp.Monolith.Interfaces;
 
 namespace VaraniumSharp.Monolith.Configuration
 {

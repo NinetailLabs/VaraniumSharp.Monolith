@@ -5,6 +5,9 @@ using VaraniumSharp.Monolith.Interfaces;
 
 namespace VaraniumSharp.Monolith.HostSetup
 {
+    /// <summary>
+    /// TopShelf service that set up an Owin instance
+    /// </summary>
     [AutomaticContainerRegistration(typeof(ITopShelfService), Reuse = ServiceReuse.Singleton)]
     public class OwinHostTopShelfService : ITopShelfService
     {

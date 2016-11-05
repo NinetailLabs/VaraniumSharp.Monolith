@@ -26,6 +26,9 @@ namespace VaraniumSharp.Monolith.HostSetup
 
         #region Properties
 
+        /// <summary>
+        /// TopShelf Host
+        /// </summary>
         public Host TopShelfHost { get; private set; }
 
         #endregion Properties
