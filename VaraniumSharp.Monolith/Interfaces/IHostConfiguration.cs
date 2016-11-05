@@ -1,5 +1,8 @@
 namespace VaraniumSharp.Monolith.Interfaces
 {
+    /// <summary>
+    /// Provides configuration values for setting up a Host
+    /// </summary>
     public interface IHostConfiguration
     {
         /// <summary>
