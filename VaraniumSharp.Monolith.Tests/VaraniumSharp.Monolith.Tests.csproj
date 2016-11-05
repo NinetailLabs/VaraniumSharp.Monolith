@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\HostConfigurationTests.cs" />
+    <Compile Include="Configuration\TopShelfConfigurationTests.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -227,6 +228,17 @@
       <ItemGroup>
         <Reference Include="Splunk.Logging.Common">
           <HintPath>..\packages\Splunk.Logging.Common\lib\net45\Splunk.Logging.Common.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Topshelf">
+          <HintPath>..\packages\Topshelf\lib\net452\Topshelf.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
