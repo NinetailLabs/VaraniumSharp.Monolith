@@ -43,8 +43,12 @@
   <ItemGroup>
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
+    <Compile Include="Interfaces\ITopShelfConfiguration.cs" />
     <Compile Include="Configuration\TopShelfConfiguration.cs" />
     <Compile Include="Enumerations\ConfigurationKeys.cs" />
+    <Compile Include="HostSetup\TopShelfBootstrapper.cs" />
+    <Compile Include="HostSetup\OwinHostTopShelfService.cs" />
+    <Compile Include="Interfaces\ITopShelfService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +196,17 @@
       <ItemGroup>
         <Reference Include="Topshelf">
           <HintPath>..\packages\Topshelf\lib\net452\Topshelf.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Topshelf.Serilog">
+          <HintPath>..\packages\Topshelf.Serilog\lib\net452\Topshelf.Serilog.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

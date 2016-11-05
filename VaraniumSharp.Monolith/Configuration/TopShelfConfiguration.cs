@@ -1,4 +1,6 @@
 ﻿using Topshelf.Runtime;
+using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
 using VaraniumSharp.Extensions;
 using VaraniumSharp.Monolith.Enumerations;
 
@@ -7,7 +9,8 @@ namespace VaraniumSharp.Monolith.Configuration
     /// <summary>
     /// Provides configuration values for setting up TopShelf hosting
     /// </summary>
-    public class TopShelfConfiguration
+    [AutomaticContainerRegistration(typeof(ITopShelfConfiguration), Reuse = ServiceReuse.Singleton)]
+    public class TopShelfConfiguration : ITopShelfConfiguration
     {
         #region Properties
 

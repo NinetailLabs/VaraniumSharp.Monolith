@@ -1,3 +1,4 @@
 ﻿SemVer.Git.MSBuild
 VaraniumSharp.Initiator
 Topshelf
+TopShelf.Serilog
