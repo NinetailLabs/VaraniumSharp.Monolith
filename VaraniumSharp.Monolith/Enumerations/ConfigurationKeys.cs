@@ -5,6 +5,8 @@
     /// </summary>
     public static class ConfigurationKeys
     {
+        #region Variables
+
         /// <summary>
         /// Host address of the service
         /// </summary>
@@ -34,5 +36,7 @@
         /// Start mode to use when the service is installed
         /// </summary>
         public const string ServiceStartMode = "service.startmode";
+
+        #endregion
     }
 }

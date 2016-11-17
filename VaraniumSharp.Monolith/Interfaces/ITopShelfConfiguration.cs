@@ -7,6 +7,8 @@ namespace VaraniumSharp.Monolith.Interfaces
     /// </summary>
     public interface ITopShelfConfiguration
     {
+        #region Properties
+
         /// <summary>
         /// The description of the service that will be displayed in the service control manager
         /// </summary>
@@ -26,5 +28,7 @@ namespace VaraniumSharp.Monolith.Interfaces
         /// Start mode to use when the service is installed
         /// </summary>
         HostStartMode StartMode { get; }
+
+        #endregion
     }
 }

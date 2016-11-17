@@ -5,8 +5,10 @@ namespace VaraniumSharp.Monolith.Interfaces
     /// </summary>
     public interface IHostConfiguration
     {
+        #region Properties
+
         /// <summary>
-        /// The address on which the service should be hosted 
+        /// The address on which the service should be hosted
         /// <example>http://localhost</example>
         /// </summary>
         string Host { get; }
@@ -21,5 +23,7 @@ namespace VaraniumSharp.Monolith.Interfaces
         /// <example>1337</example>
         /// </summary>
         int Port { get; }
+
+        #endregion
     }
 }

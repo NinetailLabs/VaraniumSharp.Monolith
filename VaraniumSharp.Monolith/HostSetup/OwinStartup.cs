@@ -7,6 +7,8 @@ namespace VaraniumSharp.Monolith.HostSetup
     /// </summary>
     public class OwinStartup
     {
+        #region Public Methods
+
         /// <summary>
         /// Set up Owin middleware
         /// </summary>
@@ -15,5 +17,7 @@ namespace VaraniumSharp.Monolith.HostSetup
         {
             app.UseNancy();
         }
+
+        #endregion
     }
 }

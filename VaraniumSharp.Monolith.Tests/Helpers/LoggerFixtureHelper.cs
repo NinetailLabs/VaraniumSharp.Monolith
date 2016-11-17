@@ -28,6 +28,6 @@ namespace VaraniumSharp.Monolith.Tests.Helpers
             Log.Logger = logger;
         }
 
-        #endregion Public Methods
+        #endregion
     }
 }

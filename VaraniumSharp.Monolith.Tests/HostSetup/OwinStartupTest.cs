@@ -10,6 +10,8 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
 {
     public class OwinStartupTest
     {
+        #region Public Methods
+
         [Test]
         public void RegisterNancyForStartup()
         {
@@ -24,13 +26,37 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
             appBuilderDummy.MiddleWareRegistrationInvocations.Should().Be(1);
         }
 
-        public class AppBuilderFixture : IAppBuilder
+        #endregion
+
+        private class AppBuilderFixture : IAppBuilder
         {
-            public int MiddleWareRegistrationInvocations { get; private set; }
+            #region Constructor
 
             public AppBuilderFixture()
             {
                 Properties = new ConcurrentDictionary<string, object>();
+            }
+
+            #endregion
+
+            #region Properties
+
+            public int MiddleWareRegistrationInvocations { get; private set; }
+
+            public IDictionary<string, object> Properties { get; }
+
+            #endregion
+
+            #region Public Methods
+
+            public object Build(Type returnType)
+            {
+                throw new NotImplementedException();
+            }
+
+            public IAppBuilder New()
+            {
+                return this;
             }
 
             public IAppBuilder Use(object middleware, params object[] args)
@@ -39,17 +65,7 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
                 return this;
             }
 
-            public IAppBuilder New()
-            {
-                return this;
-            }
-
-            public IDictionary<string, object> Properties { get; }
-
-            public object Build(Type returnType)
-            {
-                throw new System.NotImplementedException();
-            }
+            #endregion
         }
     }
 }

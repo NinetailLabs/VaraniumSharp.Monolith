@@ -1,6 +1,6 @@
-﻿using System.Globalization;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
+using System.Globalization;
 using VaraniumSharp.Monolith.Configuration;
 using VaraniumSharp.Monolith.Enumerations;
 using VaraniumSharp.Monolith.Tests.Helpers;
@@ -9,6 +9,8 @@ namespace VaraniumSharp.Monolith.Tests.Configuration
 {
     public class HostConfigurationTests
     {
+        #region Public Methods
+
         [Test]
         public void ConfigurationIsLoadedCorrectly()
         {
@@ -27,5 +29,7 @@ namespace VaraniumSharp.Monolith.Tests.Configuration
             sut.Port.Should().Be(port);
             sut.HostUrl.Should().Be($"{host}:{port}");
         }
+
+        #endregion
     }
 }

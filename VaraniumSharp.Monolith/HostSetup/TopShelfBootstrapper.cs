@@ -22,7 +22,7 @@ namespace VaraniumSharp.Monolith.HostSetup
             SetupTopshelfHost(service);
         }
 
-        #endregion Constructor
+        #endregion
 
         #region Properties
 
@@ -31,7 +31,7 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// </summary>
         public Host TopShelfHost { get; private set; }
 
-        #endregion Properties
+        #endregion
 
         #region Private Methods
 
@@ -61,6 +61,6 @@ namespace VaraniumSharp.Monolith.HostSetup
             });
         }
 
-        #endregion Private Methods
+        #endregion
     }
 }

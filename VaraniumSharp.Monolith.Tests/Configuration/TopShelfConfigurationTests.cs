@@ -9,6 +9,8 @@ namespace VaraniumSharp.Monolith.Tests.Configuration
 {
     public class TopShelfConfigurationTests
     {
+        #region Public Methods
+
         [Test]
         public void ConfigurationIsLoadedCorrectly()
         {
@@ -32,5 +34,7 @@ namespace VaraniumSharp.Monolith.Tests.Configuration
             sut.Description.Should().Be(serviceDescription);
             sut.StartMode.Should().Be(startMode);
         }
+
+        #endregion
     }
 }
