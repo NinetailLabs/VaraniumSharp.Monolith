@@ -10,7 +10,7 @@ namespace VaraniumSharp.Monolith.Configuration
     /// <summary>
     /// Provides configuration values for setting up TopShelf hosting
     /// </summary>
-    [AutomaticContainerRegistration(typeof(ITopShelfConfiguration), Reuse = ServiceReuse.Singleton)]
+    [AutomaticContainerRegistration(typeof(ITopShelfConfiguration), ServiceReuse.Singleton)]
     public class TopShelfConfiguration : ITopShelfConfiguration
     {
         #region Properties

@@ -8,7 +8,7 @@ namespace VaraniumSharp.Monolith.HostSetup
     /// <summary>
     /// Runner for ITopShelfService
     /// </summary>
-    [AutomaticContainerRegistration(typeof(TopShelfBootstrapper), Reuse = ServiceReuse.Singleton)]
+    [AutomaticContainerRegistration(typeof(TopShelfBootstrapper), ServiceReuse.Singleton)]
     public class TopShelfBootstrapper
     {
         #region Constructor

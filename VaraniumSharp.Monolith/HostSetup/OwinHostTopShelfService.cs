@@ -10,7 +10,7 @@ namespace VaraniumSharp.Monolith.HostSetup
     /// <summary>
     /// TopShelf service that set up an Owin instance
     /// </summary>
-    [AutomaticContainerRegistration(typeof(ITopShelfService), Reuse = ServiceReuse.Singleton)]
+    [AutomaticContainerRegistration(typeof(ITopShelfService), ServiceReuse.Singleton)]
     public class OwinHostTopShelfService : ITopShelfService
     {
         #region Constructor
