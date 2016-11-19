@@ -9,7 +9,7 @@ namespace VaraniumSharp.Monolith.Configuration
     /// <summary>
     /// Provides configuration values for setting up a Host
     /// </summary>
-    [AutomaticContainerRegistration(typeof(IHostConfiguration), Reuse = ServiceReuse.Singleton)]
+    [AutomaticContainerRegistration(typeof(IHostConfiguration), ServiceReuse.Singleton)]
     public class HostConfiguration : IHostConfiguration
     {
         #region Properties

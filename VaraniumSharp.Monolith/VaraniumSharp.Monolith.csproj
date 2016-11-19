@@ -43,6 +43,7 @@
   <ItemGroup>
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
+    <Compile Include="Configuration\AutomaticContainerRegistrationExtensions.cs" />
     <Compile Include="Interfaces\IHostConfiguration.cs" />
     <Compile Include="HostSetup\OwinStartup.cs" />
     <Compile Include="Interfaces\ITopShelfConfiguration.cs" />
