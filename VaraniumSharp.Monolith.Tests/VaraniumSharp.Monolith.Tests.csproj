@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ContainerSetupExtensionsTests.cs" />
     <Compile Include="Configuration\HostConfigurationTests.cs" />
     <Compile Include="Configuration\TopShelfConfigurationTests.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
