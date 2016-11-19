@@ -52,6 +52,7 @@
     <Compile Include="HostSetup\TopShelfBootstrapper.cs" />
     <Compile Include="HostSetup\OwinHostTopShelfService.cs" />
     <Compile Include="Interfaces\ITopShelfService.cs" />
+    <Compile Include="NancyModules\HealthModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -327,5 +328,4 @@
     </When>
   </Choose>
   <Import Project="..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_Git_MSBuild_targets).targets" Condition="Exists('..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_Git_MSBuild_targets).targets')" Label="Paket" />
-  
 </Project>
