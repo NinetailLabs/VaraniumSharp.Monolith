@@ -9,6 +9,8 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
 {
     public class OwinTopShelfServiceTests
     {
+        #region Public Methods
+
         [Test]
         public void ConfigurationsAreCorrectlyLoaded()
         {
@@ -61,19 +63,29 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
             LoggerFixtureHelper.SwitchLogger(loggerTuple.Item1);
         }
 
+        #endregion
+
         public class OwinHostTopShelfServiceFixture
         {
-            public Mock<ITopShelfConfiguration> TopShelfConfigurationMock { get; } = new Mock<ITopShelfConfiguration>();
-            public Mock<IHostConfiguration> HostConfigurationMock { get; } = new Mock<IHostConfiguration>();
-
-            public OwinHostTopShelfService Instance { get; }
-            public ITopShelfConfiguration GetTopShelfConfiguration => TopShelfConfigurationMock.Object;
-            public IHostConfiguration GetHostConfiguration => HostConfigurationMock.Object;
+            #region Constructor
 
             public OwinHostTopShelfServiceFixture()
             {
                 Instance = new OwinHostTopShelfService(GetTopShelfConfiguration, GetHostConfiguration);
             }
+
+            #endregion
+
+            #region Properties
+
+            public IHostConfiguration GetHostConfiguration => HostConfigurationMock.Object;
+            public ITopShelfConfiguration GetTopShelfConfiguration => TopShelfConfigurationMock.Object;
+            public Mock<IHostConfiguration> HostConfigurationMock { get; } = new Mock<IHostConfiguration>();
+
+            public OwinHostTopShelfService Instance { get; }
+            public Mock<ITopShelfConfiguration> TopShelfConfigurationMock { get; } = new Mock<ITopShelfConfiguration>();
+
+            #endregion
         }
     }
 }

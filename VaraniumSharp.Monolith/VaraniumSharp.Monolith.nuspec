@@ -13,7 +13,7 @@
       <iconUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Monolith/develop/icon.png</iconUrl>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <copyright>Copyright (c) NineTail Labs 2016</copyright>
-      <releaseNotes></releaseNotes>
+      <releaseNotes>ReleaseNotesHere</releaseNotes>
       <tags>C# VaraniumSharp Varanium VaraniumSharp.Monolith Monolith</tags>
 
     <dependencies>
@@ -22,7 +22,7 @@
         <dependency id="Nancy.Owin" version="1.4.1"/>
         <dependency id="Topshelf" version="4.0.3"/>
         <dependency id="Topshelf.Serilog" version="4.0.3"/>
-        <dependency id="VaraniumSharp.Initiator" version="1.0.4"/>
+        <dependency id="VaraniumSharp.Initiator" version="1.4.0"/>
     </dependencies>
 
    </metadata>

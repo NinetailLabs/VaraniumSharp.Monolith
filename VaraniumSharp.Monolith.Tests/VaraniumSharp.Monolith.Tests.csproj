@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ContainerSetupExtensionsTests.cs" />
     <Compile Include="Configuration\HostConfigurationTests.cs" />
     <Compile Include="Configuration\TopShelfConfigurationTests.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="HostSetup\OwinStartupTest.cs" />
     <Compile Include="HostSetup\OwinTopShelfServiceTests.cs" />
     <Compile Include="HostSetup\TopShelfBootstrapperTests.cs" />
+    <Compile Include="NancyModules\HealthModuleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

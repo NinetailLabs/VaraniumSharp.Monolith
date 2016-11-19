@@ -1,6 +1,8 @@
-﻿Microsoft.Owin.Hosting
+﻿DryIoc.Owin.dll
+Microsoft.Owin.Hosting
 Microsoft.Owin.Host.HttpListener
 Nancy.Owin
+Nancy.Bootstrappers.DryIoc 
 SemVer.Git.MSBuild
 VaraniumSharp.Initiator
 Topshelf

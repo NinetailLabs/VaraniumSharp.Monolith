@@ -2,7 +2,6 @@
 using Moq;
 using NUnit.Framework;
 using System.Linq;
-using VaraniumSharp.Monolith.Configuration;
 using VaraniumSharp.Monolith.HostSetup;
 using VaraniumSharp.Monolith.Interfaces;
 using VaraniumSharp.Monolith.Tests.Helpers;
@@ -11,6 +10,8 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
 {
     public class TopShelfBootstrapperTests
     {
+        #region Public Methods
+
         [Test]
         public void ExecutingHostWorks()
         {
@@ -43,20 +44,30 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
             LoggerFixtureHelper.SwitchLogger(loggerTuple.Item1);
         }
 
+        #endregion
+
         private class TopShelfBootstrapperFixture
         {
-            public Mock<ITopShelfService> TopShelfServiceMock { get; } = new Mock<ITopShelfService>();
-            public Mock<ITopShelfConfiguration> TopShelfConfigurationMock { get; } = new Mock<ITopShelfConfiguration>();
+            #region Properties
 
-            public TopShelfBootstrapper Instance { get; private set; }
             public ITopShelfService GeTopShelfService => TopShelfServiceMock.Object;
             public ITopShelfConfiguration GetTopShelfConfiguration => TopShelfConfigurationMock.Object;
+
+            public TopShelfBootstrapper Instance { get; private set; }
+            public Mock<ITopShelfConfiguration> TopShelfConfigurationMock { get; } = new Mock<ITopShelfConfiguration>();
+            public Mock<ITopShelfService> TopShelfServiceMock { get; } = new Mock<ITopShelfService>();
+
+            #endregion
+
+            #region Public Methods
 
             public void SetupInstance()
             {
                 TopShelfServiceMock.Setup(t => t.TopShelfConfiguration).Returns(GetTopShelfConfiguration);
                 Instance = new TopShelfBootstrapper(GeTopShelfService);
             }
+
+            #endregion
         }
     }
 }

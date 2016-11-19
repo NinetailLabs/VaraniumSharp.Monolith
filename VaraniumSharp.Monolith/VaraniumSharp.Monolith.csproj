@@ -43,6 +43,7 @@
   <ItemGroup>
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
+    <Compile Include="Configuration\AutomaticContainerRegistrationExtensions.cs" />
     <Compile Include="Interfaces\IHostConfiguration.cs" />
     <Compile Include="HostSetup\OwinStartup.cs" />
     <Compile Include="Interfaces\ITopShelfConfiguration.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="HostSetup\TopShelfBootstrapper.cs" />
     <Compile Include="HostSetup\OwinHostTopShelfService.cs" />
     <Compile Include="Interfaces\ITopShelfService.cs" />
+    <Compile Include="NancyModules\HealthModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +79,17 @@
       <ItemGroup>
         <Reference Include="DryIoc">
           <HintPath>..\packages\DryIoc.dll\lib\net45\DryIoc.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="DryIoc.Owin">
+          <HintPath>..\packages\DryIoc.Owin.dll\lib\net45\DryIoc.Owin.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -121,6 +134,17 @@
       <ItemGroup>
         <Reference Include="Nancy">
           <HintPath>..\packages\Nancy\lib\net40\Nancy.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Nancy.Bootstrappers.DryIoc">
+          <HintPath>..\packages\Nancy.Bootstrappers.DryIoc\lib\net45\Nancy.Bootstrappers.DryIoc.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

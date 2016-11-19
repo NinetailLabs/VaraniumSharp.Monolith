@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.Owin.Hosting;
+﻿using Microsoft.Owin.Hosting;
 using Serilog;
+using System;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
 using VaraniumSharp.Monolith.Interfaces;
@@ -10,7 +10,7 @@ namespace VaraniumSharp.Monolith.HostSetup
     /// <summary>
     /// TopShelf service that set up an Owin instance
     /// </summary>
-    [AutomaticContainerRegistration(typeof(ITopShelfService), Reuse = ServiceReuse.Singleton)]
+    [AutomaticContainerRegistration(typeof(ITopShelfService), ServiceReuse.Singleton)]
     public class OwinHostTopShelfService : ITopShelfService
     {
         #region Constructor
@@ -32,14 +32,14 @@ namespace VaraniumSharp.Monolith.HostSetup
         #region Properties
 
         /// <summary>
-        /// Get the topShelfConfiguration used by the TopShelf service
-        /// </summary>
-        public ITopShelfConfiguration TopShelfConfiguration { get; }
-
-        /// <summary>
         /// Get the topShelfConfiguration used by Owin
         /// </summary>
         public IHostConfiguration HostConfiguration { get; }
+
+        /// <summary>
+        /// Get the topShelfConfiguration used by the TopShelf service
+        /// </summary>
+        public ITopShelfConfiguration TopShelfConfiguration { get; }
 
         #endregion
 
@@ -75,8 +75,9 @@ namespace VaraniumSharp.Monolith.HostSetup
 
         #region Variables
 
-        private IDisposable _webbApp;
         private readonly ILogger _logger;
+
+        private IDisposable _webbApp;
 
         #endregion
     }
