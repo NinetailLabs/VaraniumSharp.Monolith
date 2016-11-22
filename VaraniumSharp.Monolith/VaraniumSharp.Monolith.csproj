@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Wrappers\IPushoverWrapper.cs" />
+    <Compile Include="Interfaces\Notifications\IPushoverNotifier.cs" />
+    <Compile Include="Wrappers\PushoverWrapper.cs" />
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
     <Compile Include="Configuration\AutomaticContainerRegistrationExtensions.cs" />

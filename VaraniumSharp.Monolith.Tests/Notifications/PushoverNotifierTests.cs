@@ -1,8 +1,9 @@
 ﻿using FluentAssertions;
 using Moq;
 using NUnit.Framework;
+using PushoverClient;
 using System;
-using VaraniumSharp.Monolith.Interfaces;
+using VaraniumSharp.Monolith.Interfaces.Wrappers;
 using VaraniumSharp.Monolith.Notifications;
 using VaraniumSharp.Monolith.Tests.Helpers;
 
@@ -25,8 +26,12 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
                 ApiToken = apiToken,
                 DefaultSendKey = sendkey
             };
+            var wrapperDummy = new Mock<IPushoverWrapper>();
             var logTuple = LoggerFixtureHelper.SetupLogCatcher();
-            var sut = new PushoverNotifier(configuration);
+
+            wrapperDummy.Setup(t => t.Configuration).Returns(configuration);
+
+            var sut = new PushoverNotifier(wrapperDummy.Object);
 
             // act
             sut.SendNotification("Test", "Test");
@@ -41,13 +46,17 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
         public void PushIsNotSendIfNoDefaultKeyIsSetAndSendIsAttemptedWithoutASendKey()
         {
             // arrange
+            var logTuple = LoggerFixtureHelper.SetupLogCatcher();
             const string apiToken = "fakeToken";
             var configuration = new PushoverConfigDummy(false)
             {
                 ApiToken = apiToken
             };
-            var logTuple = LoggerFixtureHelper.SetupLogCatcher();
-            var sut = new PushoverNotifier(configuration);
+
+            var wrapperDummy = new Mock<IPushoverWrapper>();
+            wrapperDummy.Setup(t => t.Configuration).Returns(configuration);
+
+            var sut = new PushoverNotifier(wrapperDummy.Object);
 
             // act
             sut.SendNotification("Test", "Test");
@@ -62,6 +71,7 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
         public void PushLogsErrorIfServerResponseIsInvalid()
         {
             // arrange
+            var logTuple = LoggerFixtureHelper.SetupLogCatcher();
             const string apiToken = "fakeToken";
             const string sendkey = "Send";
             var configuration = new PushoverConfigDummy(true)
@@ -69,8 +79,12 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
                 ApiToken = apiToken,
                 DefaultSendKey = sendkey
             };
-            var logTuple = LoggerFixtureHelper.SetupLogCatcher();
-            var sut = new PushoverNotifier(configuration);
+
+            var wrapperDummy = new Mock<IPushoverWrapper>();
+            wrapperDummy.Setup(t => t.Configuration).Returns(configuration);
+            wrapperDummy.Setup(t => t.Push("Test", "Test", "", "")).Throws<Exception>();
+
+            var sut = new PushoverNotifier(wrapperDummy.Object);
 
             // act
             sut.SendNotification("Test", "Test");
@@ -82,14 +96,46 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
         }
 
         [Test]
+        public void PushNotification()
+        {
+            // arrange
+            var logTuple = LoggerFixtureHelper.SetupLogCatcher();
+            const string apiToken = "fakeToken";
+            const string sendkey = "Send";
+            var configuration = new PushoverConfigDummy(true)
+            {
+                ApiToken = apiToken,
+                DefaultSendKey = sendkey
+            };
+
+            var wrapperDummy = new Mock<IPushoverWrapper>();
+            wrapperDummy.Setup(t => t.Configuration).Returns(configuration);
+            wrapperDummy.Setup(t => t.Push("Test", "Test", sendkey, "")).Returns(new PushResponse());
+
+            var sut = new PushoverNotifier(wrapperDummy.Object);
+
+            // act
+            sut.SendNotification("Test", "Test");
+
+            // assert
+            wrapperDummy.Verify(t => t.Push("Test", "Test", "", ""), Times.Once);
+            logTuple.Item2.Verify(t => t.Debug("Push sent"), Times.Once);
+
+            LoggerFixtureHelper.SwitchLogger(logTuple.Item1);
+        }
+
+        [Test]
         public void PushoverDoesNotActivateIfDisabledInSettings()
         {
             // arrange
-            var config = new PushoverConfigDummy(false);
             var logTuple = LoggerFixtureHelper.SetupLogCatcher();
+            var config = new PushoverConfigDummy(false);
+
+            var wrapperDummy = new Mock<IPushoverWrapper>();
+            wrapperDummy.Setup(t => t.Configuration).Returns(config);
 
             // act
-            var sut = new PushoverNotifier(config);
+            var sut = new PushoverNotifier(wrapperDummy.Object);
 
             // assert
             sut.IsEnabled.Should().BeFalse();
@@ -109,8 +155,11 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
                 ApiToken = apiToken
             };
 
+            var wrapperDummy = new Mock<IPushoverWrapper>();
+            wrapperDummy.Setup(t => t.Configuration).Returns(config);
+
             // act
-            var sut = new PushoverNotifier(config);
+            var sut = new PushoverNotifier(wrapperDummy.Object);
 
             // assert
             sut.IsEnabled.Should().BeTrue();
@@ -118,25 +167,5 @@ namespace VaraniumSharp.Monolith.Tests.Notifications
         }
 
         #endregion
-
-        private class PushoverConfigDummy : IPushoverConfiguration
-        {
-            #region Constructor
-
-            public PushoverConfigDummy(bool enable)
-            {
-                IsEnabled = enable;
-            }
-
-            #endregion
-
-            #region Properties
-
-            public string ApiToken { get; set; }
-            public string DefaultSendKey { get; set; }
-            public bool IsEnabled { get; }
-
-            #endregion
-        }
     }
 }

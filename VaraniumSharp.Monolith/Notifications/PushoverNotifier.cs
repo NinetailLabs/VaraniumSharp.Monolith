@@ -1,25 +1,28 @@
-﻿using PushoverClient;
-using Serilog;
+﻿using Serilog;
 using System;
+using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
 using VaraniumSharp.Monolith.Interfaces;
+using VaraniumSharp.Monolith.Interfaces.Notifications;
+using VaraniumSharp.Monolith.Interfaces.Wrappers;
 
 namespace VaraniumSharp.Monolith.Notifications
 {
     /// <summary>
     /// Provides ability to easily send Pushover notifications
     /// </summary>
-    //TODO - Add interface
-    public class PushoverNotifier
+    [AutomaticContainerRegistration(typeof(IPushoverNotifier), ServiceReuse.Singleton)]
+    public class PushoverNotifier : IPushoverNotifier
     {
         #region Constructor
 
         /// <summary>
         /// Parameterless Constructor
         /// </summary>
-        public PushoverNotifier(IPushoverConfiguration configuration)
+        public PushoverNotifier(IPushoverWrapper pushoverWrapper)
         {
-            _configuration = configuration;
-            IsEnabled = configuration.IsEnabled;
+            _configuration = pushoverWrapper.Configuration;
+            IsEnabled = _configuration.IsEnabled;
             _log = Log.Logger.ForContext<PushoverNotifier>();
 
             if (!_configuration.IsEnabled)
@@ -28,9 +31,7 @@ namespace VaraniumSharp.Monolith.Notifications
             }
 
             _log.Information("Setting up Pushover client");
-            _client = string.IsNullOrEmpty(_configuration.DefaultSendKey)
-                ? new Pushover(_configuration.ApiToken)
-                : new Pushover(_configuration.ApiToken, _configuration.DefaultSendKey);
+            _client = pushoverWrapper;
         }
 
         #endregion
@@ -88,7 +89,7 @@ namespace VaraniumSharp.Monolith.Notifications
 
         #region Variables
 
-        private readonly Pushover _client;
+        private readonly IPushoverWrapper _client;
         private readonly IPushoverConfiguration _configuration;
         private readonly ILogger _log;
 

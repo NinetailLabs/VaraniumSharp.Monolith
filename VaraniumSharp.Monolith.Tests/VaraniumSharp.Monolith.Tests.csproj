@@ -52,12 +52,14 @@
     <Compile Include="Configuration\TopShelfConfigurationTests.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Helpers\LoggerFixtureHelper.cs" />
+    <Compile Include="Helpers\PushoverConfigDummy.cs" />
     <Compile Include="HostSetup\OwinStartupTest.cs" />
     <Compile Include="HostSetup\OwinTopShelfServiceTests.cs" />
     <Compile Include="HostSetup\TopShelfBootstrapperTests.cs" />
     <Compile Include="NancyModules\HealthModuleTests.cs" />
     <Compile Include="Notifications\PushoverNotifierTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\PushoverWrapperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

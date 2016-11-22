@@ -1,9 +1,15 @@
-﻿using VaraniumSharp.Extensions;
+﻿using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
+using VaraniumSharp.Extensions;
 using VaraniumSharp.Monolith.Enumerations;
 using VaraniumSharp.Monolith.Interfaces;
 
 namespace VaraniumSharp.Monolith.Configuration
 {
+    /// <summary>
+    /// Configuration for Pushover
+    /// </summary>
+    [AutomaticContainerRegistration(typeof(IPushoverConfiguration), ServiceReuse.Singleton)]
     public class PushoverConfiguration : IPushoverConfiguration
     {
         #region Properties
