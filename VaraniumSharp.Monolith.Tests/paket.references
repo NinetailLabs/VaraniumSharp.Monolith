@@ -1,8 +1,11 @@
 ﻿FluentAssertions
+HttpMock
 Microsoft.Owin.Hosting
 Microsoft.Owin.Host.HttpListener
 Moq
 Nancy.Owin
 NUnit
+PushoverNET
+ServiceStack.Text
 VaraniumSharp.Initiator
 Topshelf

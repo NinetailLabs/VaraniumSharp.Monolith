@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Configuration\ContainerSetupExtensionsTests.cs" />
     <Compile Include="Configuration\HostConfigurationTests.cs" />
+    <Compile Include="Configuration\PushoverConfigurationTests.cs" />
     <Compile Include="Configuration\TopShelfConfigurationTests.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Helpers\LoggerFixtureHelper.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="HostSetup\OwinTopShelfServiceTests.cs" />
     <Compile Include="HostSetup\TopShelfBootstrapperTests.cs" />
     <Compile Include="NancyModules\HealthModuleTests.cs" />
+    <Compile Include="Notifications\PushoverNotifierTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +109,39 @@
         </Reference>
         <Reference Include="FluentAssertions">
           <HintPath>..\packages\FluentAssertions\lib\net45\FluentAssertions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="HttpMock">
+          <HintPath>..\packages\HttpMock\lib\net45\HttpMock.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Kayak">
+          <HintPath>..\packages\Kayak\lib\Kayak.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="log4net">
+          <HintPath>..\packages\log4net\lib\net45-full\log4net.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -215,6 +250,17 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
+        <Reference Include="PushoverClient">
+          <HintPath>..\packages\PushoverNET\lib\net40\PushoverClient.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
         <Reference Include="Serilog">
           <HintPath>..\packages\Serilog\lib\net46\Serilog.dll</HintPath>
           <Private>True</Private>
@@ -294,6 +340,17 @@
       <ItemGroup>
         <Reference Include="Serilog.Sinks.Splunk">
           <HintPath>..\packages\Serilog.Sinks.Splunk\lib\net45\Serilog.Sinks.Splunk.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="ServiceStack.Text">
+          <HintPath>..\packages\ServiceStack.Text\lib\net35\ServiceStack.Text.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

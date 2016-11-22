@@ -8,6 +8,21 @@
         #region Variables
 
         /// <summary>
+        /// API key for Pushover
+        /// </summary>
+        public const string PushoverApiToken = "pushover.apitoken";
+
+        /// <summary>
+        /// Default device key for Pushover
+        /// </summary>
+        public const string PushoverDefaultSendKey = "pushover.defaultsendkey";
+
+        /// <summary>
+        /// Key indicating if Pushover is enabled
+        /// </summary>
+        public const string PushoverEnabled = "pushover.isenabled";
+
+        /// <summary>
         /// Host address of the service
         /// </summary>
         public const string ServiceHost = "service.host";

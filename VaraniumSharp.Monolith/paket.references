@@ -2,8 +2,10 @@
 Microsoft.Owin.Hosting
 Microsoft.Owin.Host.HttpListener
 Nancy.Owin
-Nancy.Bootstrappers.DryIoc 
+Nancy.Bootstrappers.DryIoc
+PushoverNET
 SemVer.Git.MSBuild
-VaraniumSharp.Initiator
+ServiceStack.Text
 Topshelf
 TopShelf.Serilog
+VaraniumSharp.Initiator

@@ -44,6 +44,8 @@
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
     <Compile Include="Configuration\AutomaticContainerRegistrationExtensions.cs" />
+    <Compile Include="Interfaces\IPushoverConfiguration.cs" />
+    <Compile Include="Configuration\PushoverConfiguration.cs" />
     <Compile Include="Interfaces\IHostConfiguration.cs" />
     <Compile Include="HostSetup\OwinStartup.cs" />
     <Compile Include="Interfaces\ITopShelfConfiguration.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="HostSetup\OwinHostTopShelfService.cs" />
     <Compile Include="Interfaces\ITopShelfService.cs" />
     <Compile Include="NancyModules\HealthModule.cs" />
+    <Compile Include="Notifications\PushoverNotifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +190,17 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
+        <Reference Include="PushoverClient">
+          <HintPath>..\packages\PushoverNET\lib\net40\PushoverClient.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
         <Reference Include="Serilog">
           <HintPath>..\packages\Serilog\lib\net46\Serilog.dll</HintPath>
           <Private>True</Private>
@@ -275,6 +289,17 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
+        <Reference Include="ServiceStack.Text">
+          <HintPath>..\packages\ServiceStack.Text\lib\net35\ServiceStack.Text.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
         <Reference Include="Splunk.Logging.Common">
           <HintPath>..\packages\Splunk.Logging.Common\lib\net45\Splunk.Logging.Common.dll</HintPath>
           <Private>True</Private>
@@ -328,4 +353,5 @@
     </When>
   </Choose>
   <Import Project="..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_Git_MSBuild_targets).targets" Condition="Exists('..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_Git_MSBuild_targets).targets')" Label="Paket" />
+  <Import Project="..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_MSBuild_targets).targets" Condition="Exists('..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_MSBuild_targets).targets')" Label="Paket" />
 </Project>

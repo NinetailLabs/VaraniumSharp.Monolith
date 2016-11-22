@@ -1,6 +1,5 @@
 ﻿using Nancy;
 using VaraniumSharp.Attributes;
-using VaraniumSharp.DependencyInjection;
 
 namespace VaraniumSharp.Monolith.NancyModules
 {
