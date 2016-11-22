@@ -1,5 +1,8 @@
 ﻿namespace VaraniumSharp.Monolith.Interfaces
 {
+    /// <summary>
+    /// Configuration for Pushover
+    /// </summary>
     public interface IPushoverConfiguration
     {
         #region Properties

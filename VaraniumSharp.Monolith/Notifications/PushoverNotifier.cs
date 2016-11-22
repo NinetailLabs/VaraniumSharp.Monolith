@@ -38,6 +38,9 @@ namespace VaraniumSharp.Monolith.Notifications
 
         #region Properties
 
+        /// <summary>
+        /// Indicate if the Pushover notifier is enabled
+        /// </summary>
         public bool IsEnabled { get; }
 
         #endregion
