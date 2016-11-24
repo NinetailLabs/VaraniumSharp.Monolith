@@ -53,6 +53,8 @@ namespace VaraniumSharp.Monolith.HostSetup
             try
             {
                 _logger.Information("Starting on {URL}", HostConfiguration.HostUrl);
+                //TODO - Use this to start Owin. This will allow loading OwinStartup class from the DI system instead of new upping it directly which is a win as it allows direct container usage
+                //WebApp.Start(new StartOptions(HostConfiguration.HostUrl), builder => (new OwinStartup()).Configuration(builder));
                 _webbApp = WebApp.Start<OwinStartup>(HostConfiguration.HostUrl);
                 _logger.Information("Startup completed");
             }

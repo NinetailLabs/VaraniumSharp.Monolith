@@ -5,6 +5,7 @@ namespace VaraniumSharp.Monolith.HostSetup
     /// <summary>
     /// Class used by Owin to configure middleware during startup
     /// </summary>
+    //TODO - Add Owin to DI container
     public class OwinStartup
     {
         #region Public Methods
@@ -16,6 +17,8 @@ namespace VaraniumSharp.Monolith.HostSetup
         public void Configuration(IAppBuilder app)
         {
             app.UseNancy();
+            //TODO - Start Hangfire
+            //app.UseHangfire();
         }
 
         #endregion
