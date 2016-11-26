@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
+using Moq;
 using NUnit.Framework;
-using Owin;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+using VaraniumSharp.Monolith.Enumerations;
 using VaraniumSharp.Monolith.HostSetup;
+using VaraniumSharp.Monolith.Interfaces.Configuration;
+using VaraniumSharp.Monolith.Tests.Helpers;
 
 namespace VaraniumSharp.Monolith.Tests.HostSetup
 {
@@ -13,11 +13,31 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
         #region Public Methods
 
         [Test]
+        public void RegisterHangfireForStartup()
+        {
+            // arrange
+            var hangfireConfigDummy = new Mock<IHangfireConfiguration>();
+            hangfireConfigDummy.Setup(t => t.Enabled).Returns(true);
+            hangfireConfigDummy.Setup(t => t.StorageEngine).Returns(HangfireStorageEngine.MemoryStorage);
+            hangfireConfigDummy.Setup(t => t.EnableDashboard).Returns(false);
+
+            var appBuilderDummy = new AppBuilderFixture();
+            var sut = new OwinStartup(hangfireConfigDummy.Object);
+
+            // act
+            sut.Configuration(appBuilderDummy);
+
+            // assert
+            appBuilderDummy.MiddleWareRegistrationInvocations.Should().Be(1);
+        }
+
+        [Test]
         public void RegisterNancyForStartup()
         {
             // arrange
+            var hangfireConfigDummy = new Mock<IHangfireConfiguration>();
             var appBuilderDummy = new AppBuilderFixture();
-            var sut = new OwinStartup();
+            var sut = new OwinStartup(hangfireConfigDummy.Object);
 
             // act
             sut.Configuration(appBuilderDummy);
@@ -27,45 +47,5 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
         }
 
         #endregion
-
-        private class AppBuilderFixture : IAppBuilder
-        {
-            #region Constructor
-
-            public AppBuilderFixture()
-            {
-                Properties = new ConcurrentDictionary<string, object>();
-            }
-
-            #endregion
-
-            #region Properties
-
-            public int MiddleWareRegistrationInvocations { get; private set; }
-
-            public IDictionary<string, object> Properties { get; }
-
-            #endregion
-
-            #region Public Methods
-
-            public object Build(Type returnType)
-            {
-                throw new NotImplementedException();
-            }
-
-            public IAppBuilder New()
-            {
-                return this;
-            }
-
-            public IAppBuilder Use(object middleware, params object[] args)
-            {
-                MiddleWareRegistrationInvocations++;
-                return this;
-            }
-
-            #endregion
-        }
     }
 }

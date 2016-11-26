@@ -3,6 +3,7 @@ using Moq;
 using NUnit.Framework;
 using VaraniumSharp.Monolith.HostSetup;
 using VaraniumSharp.Monolith.Interfaces;
+using VaraniumSharp.Monolith.Interfaces.HostSetup;
 using VaraniumSharp.Monolith.Tests.Helpers;
 
 namespace VaraniumSharp.Monolith.Tests.HostSetup
@@ -71,7 +72,7 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
 
             public OwinHostTopShelfServiceFixture()
             {
-                Instance = new OwinHostTopShelfService(GetTopShelfConfiguration, GetHostConfiguration);
+                Instance = new OwinHostTopShelfService(GetTopShelfConfiguration, GetHostConfiguration, GetOwinStartup);
             }
 
             #endregion
@@ -79,10 +80,12 @@ namespace VaraniumSharp.Monolith.Tests.HostSetup
             #region Properties
 
             public IHostConfiguration GetHostConfiguration => HostConfigurationMock.Object;
+            public IOwinStartup GetOwinStartup => OwinStartupMock.Object;
             public ITopShelfConfiguration GetTopShelfConfiguration => TopShelfConfigurationMock.Object;
             public Mock<IHostConfiguration> HostConfigurationMock { get; } = new Mock<IHostConfiguration>();
 
             public OwinHostTopShelfService Instance { get; }
+            public Mock<IOwinStartup> OwinStartupMock { get; } = new Mock<IOwinStartup>();
             public Mock<ITopShelfConfiguration> TopShelfConfigurationMock { get; } = new Mock<ITopShelfConfiguration>();
 
             #endregion

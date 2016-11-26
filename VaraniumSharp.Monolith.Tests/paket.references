@@ -1,4 +1,5 @@
 ﻿FluentAssertions
+Hangfire
 HttpMock
 Microsoft.Owin.Hosting
 Microsoft.Owin.Host.HttpListener
