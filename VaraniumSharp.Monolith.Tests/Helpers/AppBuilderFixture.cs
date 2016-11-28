@@ -1,4 +1,5 @@
-﻿using Owin;
+﻿using Moq;
+using Owin;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -15,11 +16,15 @@ namespace VaraniumSharp.Monolith.Tests.Helpers
             var tokenSource = new CancellationTokenSource();
             Properties = new ConcurrentDictionary<string, object>();
             Properties.Add("server.OnDispose", tokenSource.Token);
+            //See http://sourcebrowser.io/Browse/jchannon/katanaproject/src/Microsoft.Owin/Extensions/AppBuilderExtensions.cs#78
+            Properties.Add("builder.AddSignatureConversion", DelegateAction);
         }
 
         #endregion
 
         #region Properties
+
+        public Action<Delegate> DelegateAction => EmptyDelegateMethod;
 
         public int MiddleWareRegistrationInvocations { get; private set; }
 
@@ -43,6 +48,15 @@ namespace VaraniumSharp.Monolith.Tests.Helpers
         {
             MiddleWareRegistrationInvocations++;
             return this;
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void EmptyDelegateMethod(Delegate @delegate)
+        {
+            //Just does nothing
         }
 
         #endregion
