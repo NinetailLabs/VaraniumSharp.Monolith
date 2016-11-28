@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="Configuration\ContainerSetupExtensionsTests.cs" />
     <Compile Include="Configuration\HangfireConfigurationTests.cs" />
+    <Compile Include="Configuration\HangfireMemoryStorageConfigurationTests.cs" />
+    <Compile Include="Configuration\HangfireSqlStorageProviderConfigurationTests.cs" />
+    <Compile Include="Configuration\HangfireStorageConfigurationBaseTest.cs" />
     <Compile Include="Configuration\HostConfigurationTests.cs" />
     <Compile Include="Configuration\PushoverConfigurationTests.cs" />
     <Compile Include="Configuration\TopShelfConfigurationTests.cs" />

@@ -18,14 +18,19 @@
         public const string HangfireEnableDashboard = "hangfire.dashboardenabled";
 
         /// <summary>
-        /// Connection string to use if the SqlServer Storage Engine is used
+        /// Indicate if Hangfire Memory Storage provider should be used
         /// </summary>
-        public const string HangfireSqlConnectionString = "hangfire.sqlconnectionstring";
+        public const string HangfireMemoryStorageEnabled = "hangfire.memorystorage.enabled";
 
         /// <summary>
-        /// Method used to store Hangfire execution details
+        /// Indicate if Hangfire Sql Stoage provider should be used
         /// </summary>
-        public const string HangfireStorageEngine = "hangfire.storageengine";
+        public const string HangfireSqlStorageEnabled = "hangfire.sqlstorage.enabled";
+
+        /// <summary>
+        /// Connection string to use if the SqlServer Storage Engine is used
+        /// </summary>
+        public const string HangfireSqlConnectionString = "hangfire.sqlstorage.connectionstring";
 
         /// <summary>
         /// API key for Pushover

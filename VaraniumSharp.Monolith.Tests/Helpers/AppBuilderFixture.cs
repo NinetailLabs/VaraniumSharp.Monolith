@@ -1,5 +1,4 @@
-﻿using Moq;
-using Owin;
+﻿using Owin;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;

@@ -25,17 +25,6 @@ namespace VaraniumSharp.Monolith.Configuration
         /// </summary>
         public bool EnableDashboard => ConfigurationKeys.HangfireEnableDashboard.GetConfigurationValue<bool>();
 
-        /// <summary>
-        /// Connection string to use if the SqlServer storage engine is used
-        /// </summary>
-        public string SqlServerConnectionString => ConfigurationKeys.HangfireSqlConnectionString.GetConfigurationValue<string>();
-
-        /// <summary>
-        /// The storage engine that Hangfire should use.
-        /// <see cref="HangfireStorageEngine"/>
-        /// </summary>
-        public HangfireStorageEngine StorageEngine => ConfigurationKeys.HangfireStorageEngine.GetConfigurationValue<HangfireStorageEngine>();
-
         #endregion
     }
 }

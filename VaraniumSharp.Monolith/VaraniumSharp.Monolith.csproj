@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\HangfireConfiguration.cs" />
+    <Compile Include="Configuration\HangfireMemoryStorageConfiguration.cs" />
+    <Compile Include="Configuration\HangfireSqlStorageProviderConfiguration.cs" />
+    <Compile Include="Configuration\HangfireStorageConfigurationBase.cs" />
     <Compile Include="Interfaces\HostSetup\IOwinStartup.cs" />
     <Compile Include="Interfaces\Configuration\IHangfireConfiguration.cs" />
     <Compile Include="Enumerations\HangfireStorageEngine.cs" />
