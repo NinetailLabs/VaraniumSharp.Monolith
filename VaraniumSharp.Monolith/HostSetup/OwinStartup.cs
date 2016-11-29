@@ -1,5 +1,4 @@
-﻿using Hangfire;
-using Owin;
+﻿using Owin;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 using VaraniumSharp.Monolith.Interfaces.HostSetup;
@@ -30,7 +29,7 @@ namespace VaraniumSharp.Monolith.HostSetup
         public void Configuration(IAppBuilder app)
         {
             app.UseNancy();
-            app.UseHangfire(_hangfireConfiguration, GlobalConfiguration.Configuration);
+            app.UseHangfire(_hangfireConfiguration);
         }
 
         #endregion

@@ -1,3 +1,5 @@
+using Owin;
+
 namespace VaraniumSharp.Monolith.Interfaces.Configuration
 {
     /// <summary>
@@ -17,6 +19,17 @@ namespace VaraniumSharp.Monolith.Interfaces.Configuration
         /// Note that this setting has no effect if Hangfire is disabled
         /// </summary>
         bool EnableDashboard { get; }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Set up Hangfire based on provided Storage Provides.
+        /// Will also enable the Hangfire Dashboard if required
+        /// </summary>
+        /// <param name="appBuilder"></param>
+        void SetupHangfire(IAppBuilder appBuilder);
 
         #endregion
     }

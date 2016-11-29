@@ -1,5 +1,4 @@
-﻿using Hangfire;
-using Owin;
+﻿using Owin;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 
 namespace VaraniumSharp.Monolith.HostSetup
@@ -16,19 +15,9 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// </summary>
         /// <param name="appBuilder"></param>
         /// <param name="configuration"></param>
-        /// <param name="hangfireGlobalConfiguration"></param>
-        public static void UseHangfire(this IAppBuilder appBuilder, IHangfireConfiguration configuration, IGlobalConfiguration hangfireGlobalConfiguration)
+        public static void UseHangfire(this IAppBuilder appBuilder, IHangfireConfiguration configuration)
         {
-            if (!configuration.Enabled)
-            {
-                return;
-            }
-
-            if (configuration.EnableDashboard)
-            {
-                appBuilder.UseHangfireDashboard();
-            }
-            appBuilder.UseHangfireServer();
+            configuration.SetupHangfire(appBuilder);
         }
 
         #endregion
