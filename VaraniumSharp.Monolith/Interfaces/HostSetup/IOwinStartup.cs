@@ -2,6 +2,9 @@ using Owin;
 
 namespace VaraniumSharp.Monolith.Interfaces.HostSetup
 {
+    /// <summary>
+    /// OwinStartup inteface
+    /// </summary>
     public interface IOwinStartup
     {
         #region Public Methods
