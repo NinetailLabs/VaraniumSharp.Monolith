@@ -27,6 +27,10 @@ namespace VaraniumSharp.Monolith.Configuration
 
         #region Public Methods
 
+        /// <summary>
+        /// Apply the Configuration
+        /// </summary>
+        /// <param name="hangfireConfiguration"></param>
         public void Apply(IGlobalConfiguration hangfireConfiguration)
         {
             lock (_applyLock)
@@ -48,7 +52,7 @@ namespace VaraniumSharp.Monolith.Configuration
 
         /// <summary>
         /// This method is called during the apply method.
-        /// It shoudl be overwritten and the appropriate configuration applied
+        /// It should be implemented and the appropriate configuration applied
         /// </summary>
         protected abstract void ProviderSetup(IGlobalConfiguration hangfireConfiguration);
 

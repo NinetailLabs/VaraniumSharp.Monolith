@@ -10,7 +10,7 @@ namespace VaraniumSharp.Monolith.Configuration
     ///         <cref>https://www.nuget.org/packages/Hangfire.MemoryStorage/</cref>
     ///     </see>
     /// </summary>
-    public class HangfireMemoryStorageConfiguration : HangfireStorageConfigurationBase
+    public sealed class HangfireMemoryStorageConfiguration : HangfireStorageConfigurationBase
     {
         #region Properties
 
@@ -23,6 +23,9 @@ namespace VaraniumSharp.Monolith.Configuration
 
         #region Private Methods
 
+        /// <summary>
+        /// This method is called during the apply method
+        /// </summary>
         protected override void ProviderSetup(IGlobalConfiguration hangfireConfiguration)
         {
             if (!Enabled)

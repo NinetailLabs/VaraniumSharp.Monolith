@@ -14,6 +14,10 @@ namespace VaraniumSharp.Monolith.HostSetup
     {
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="hangfireConfiguration">Hangfire Configuration</param>
         public OwinStartup(IHangfireConfiguration hangfireConfiguration)
         {
             _hangfireConfiguration = hangfireConfiguration;
