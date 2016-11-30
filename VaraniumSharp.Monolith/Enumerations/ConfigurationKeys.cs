@@ -8,6 +8,46 @@
         #region Variables
 
         /// <summary>
+        /// Indicates if Hangfire should be enabled
+        /// </summary>
+        public const string HangfireEnabled = "hangfire.enabled";
+
+        /// <summary>
+        /// Indicate if the Hangfire dashboard should be enabled
+        /// </summary>
+        public const string HangfireEnableDashboard = "hangfire.dashboardenabled";
+
+        /// <summary>
+        /// Indicate if Hangfire Memory Storage provider should be used
+        /// </summary>
+        public const string HangfireMemoryStorageEnabled = "hangfire.memorystorage.enabled";
+
+        /// <summary>
+        /// Indicate if Hangfire Sql Stoage provider should be used
+        /// </summary>
+        public const string HangfireSqlStorageEnabled = "hangfire.sqlstorage.enabled";
+
+        /// <summary>
+        /// Connection string to use if the SqlServer Storage Engine is used
+        /// </summary>
+        public const string HangfireSqlConnectionString = "hangfire.sqlstorage.connectionstring";
+
+        /// <summary>
+        /// API key for Pushover
+        /// </summary>
+        public const string PushoverApiToken = "pushover.apitoken";
+
+        /// <summary>
+        /// Default device key for Pushover
+        /// </summary>
+        public const string PushoverDefaultSendKey = "pushover.defaultsendkey";
+
+        /// <summary>
+        /// Key indicating if Pushover is enabled
+        /// </summary>
+        public const string PushoverEnabled = "pushover.isenabled";
+
+        /// <summary>
         /// Host address of the service
         /// </summary>
         public const string ServiceHost = "service.host";

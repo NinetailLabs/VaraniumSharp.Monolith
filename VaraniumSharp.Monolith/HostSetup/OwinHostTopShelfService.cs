@@ -4,6 +4,7 @@ using System;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
 using VaraniumSharp.Monolith.Interfaces;
+using VaraniumSharp.Monolith.Interfaces.HostSetup;
 
 namespace VaraniumSharp.Monolith.HostSetup
 {
@@ -18,13 +19,15 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="topShelfConfiguration"></param>
-        /// <param name="hostConfiguration"></param>
-        public OwinHostTopShelfService(ITopShelfConfiguration topShelfConfiguration, IHostConfiguration hostConfiguration)
+        /// <param name="topShelfConfiguration">Topshelf Configuration</param>
+        /// <param name="hostConfiguration">Host Configuration</param>
+        /// <param name="owinStartup">Owin startup class</param>
+        public OwinHostTopShelfService(ITopShelfConfiguration topShelfConfiguration, IHostConfiguration hostConfiguration, IOwinStartup owinStartup)
         {
             TopShelfConfiguration = topShelfConfiguration;
             HostConfiguration = hostConfiguration;
             _logger = Log.Logger.ForContext<OwinHostTopShelfService>();
+            _owinStartup = owinStartup;
         }
 
         #endregion
@@ -53,7 +56,7 @@ namespace VaraniumSharp.Monolith.HostSetup
             try
             {
                 _logger.Information("Starting on {URL}", HostConfiguration.HostUrl);
-                _webbApp = WebApp.Start<OwinStartup>(HostConfiguration.HostUrl);
+                _webbApp = WebApp.Start(new StartOptions(HostConfiguration.HostUrl), builder => _owinStartup.Configuration(builder));
                 _logger.Information("Startup completed");
             }
             catch (Exception exception)
@@ -76,6 +79,8 @@ namespace VaraniumSharp.Monolith.HostSetup
         #region Variables
 
         private readonly ILogger _logger;
+
+        private readonly IOwinStartup _owinStartup;
 
         private IDisposable _webbApp;
 

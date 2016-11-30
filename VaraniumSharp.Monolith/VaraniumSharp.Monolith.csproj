@@ -41,9 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\HangfireConfiguration.cs" />
+    <Compile Include="Hangfire\HangfireContainerJobActivator.cs" />
+    <Compile Include="Configuration\HangfireMemoryStorageConfiguration.cs" />
+    <Compile Include="Configuration\HangfireSqlStorageProviderConfiguration.cs" />
+    <Compile Include="Configuration\HangfireStorageConfigurationBase.cs" />
+    <Compile Include="Hangfire\HangfireJobBase.cs" />
+    <Compile Include="Hangfire\HangfireReccuringJobBase.cs" />
+    <Compile Include="Interfaces\HostSetup\IOwinStartup.cs" />
+    <Compile Include="Interfaces\Configuration\IHangfireConfiguration.cs" />
+    <Compile Include="Hangfire\Hangfire.cs" />
+    <Compile Include="Interfaces\Wrappers\IPushoverWrapper.cs" />
+    <Compile Include="Interfaces\Notifications\IPushoverNotifier.cs" />
+    <Compile Include="Wrappers\PushoverWrapper.cs" />
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
     <Compile Include="Configuration\AutomaticContainerRegistrationExtensions.cs" />
+    <Compile Include="Interfaces\IPushoverConfiguration.cs" />
+    <Compile Include="Configuration\PushoverConfiguration.cs" />
     <Compile Include="Interfaces\IHostConfiguration.cs" />
     <Compile Include="HostSetup\OwinStartup.cs" />
     <Compile Include="Interfaces\ITopShelfConfiguration.cs" />
@@ -53,6 +68,7 @@
     <Compile Include="HostSetup\OwinHostTopShelfService.cs" />
     <Compile Include="Interfaces\ITopShelfService.cs" />
     <Compile Include="NancyModules\HealthModule.cs" />
+    <Compile Include="Notifications\PushoverNotifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +115,39 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
+        <Reference Include="Hangfire.Core">
+          <HintPath>..\packages\HangFire.Core\lib\net45\Hangfire.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Hangfire.MemoryStorage">
+          <HintPath>..\packages\Hangfire.MemoryStorage\lib\net45\Hangfire.MemoryStorage.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Hangfire.SqlServer">
+          <HintPath>..\packages\HangFire.SqlServer\lib\net45\Hangfire.SqlServer.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
         <Reference Include="Microsoft.Owin">
           <HintPath>..\packages\Microsoft.Owin\lib\net45\Microsoft.Owin.dll</HintPath>
           <Private>True</Private>
@@ -112,6 +161,17 @@
       <ItemGroup>
         <Reference Include="Microsoft.Owin.Host.HttpListener">
           <HintPath>..\packages\Microsoft.Owin.Host.HttpListener\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Owin.Host.SystemWeb">
+          <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -178,6 +238,17 @@
       <ItemGroup>
         <Reference Include="Owin">
           <HintPath>..\packages\Owin\lib\net40\Owin.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="PushoverClient">
+          <HintPath>..\packages\PushoverNET\lib\net40\PushoverClient.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -266,6 +337,17 @@
       <ItemGroup>
         <Reference Include="Serilog.Sinks.Splunk">
           <HintPath>..\packages\Serilog.Sinks.Splunk\lib\net45\Serilog.Sinks.Splunk.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="ServiceStack.Text">
+          <HintPath>..\packages\ServiceStack.Text\lib\net35\ServiceStack.Text.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
