@@ -1,10 +1,10 @@
 ﻿using Moq;
 using NUnit.Framework;
-using VaraniumSharp.Monolith.HostSetup;
+using VaraniumSharp.Monolith.Hangfire;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 using VaraniumSharp.Monolith.Tests.Helpers;
 
-namespace VaraniumSharp.Monolith.Tests.HostSetup
+namespace VaraniumSharp.Monolith.Tests.Hangfire
 {
     public class HangfireTests
     {

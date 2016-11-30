@@ -1,7 +1,7 @@
 ﻿using Owin;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 
-namespace VaraniumSharp.Monolith.HostSetup
+namespace VaraniumSharp.Monolith.Hangfire
 {
     /// <summary>
     /// Extension methods to allow with setting up Hangfire

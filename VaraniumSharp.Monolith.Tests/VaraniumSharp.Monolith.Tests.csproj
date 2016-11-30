@@ -48,17 +48,21 @@
   <ItemGroup>
     <Compile Include="Configuration\ContainerSetupExtensionsTests.cs" />
     <Compile Include="Configuration\HangfireConfigurationTests.cs" />
+    <Compile Include="HangfireHelperFixture.cs" />
+    <Compile Include="Hangfire\HangfireContainerJobActivatorTests.cs" />
     <Compile Include="Configuration\HangfireMemoryStorageConfigurationTests.cs" />
     <Compile Include="Configuration\HangfireSqlStorageProviderConfigurationTests.cs" />
     <Compile Include="Configuration\HangfireStorageConfigurationBaseTest.cs" />
     <Compile Include="Configuration\HostConfigurationTests.cs" />
     <Compile Include="Configuration\PushoverConfigurationTests.cs" />
     <Compile Include="Configuration\TopShelfConfigurationTests.cs" />
+    <Compile Include="Hangfire\HangfireJobBaseTests.cs" />
+    <Compile Include="Hangfire\HangfireRecurringJobBaseTests.cs" />
     <Compile Include="Helpers\AppBuilderFixture.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Helpers\LoggerFixtureHelper.cs" />
     <Compile Include="Helpers\PushoverConfigDummy.cs" />
-    <Compile Include="HostSetup\HangfireTests.cs" />
+    <Compile Include="Hangfire\HangfireTests.cs" />
     <Compile Include="HostSetup\OwinStartupTest.cs" />
     <Compile Include="HostSetup\OwinTopShelfServiceTests.cs" />
     <Compile Include="HostSetup\TopShelfBootstrapperTests.cs" />
@@ -128,6 +132,17 @@
       <ItemGroup>
         <Reference Include="Hangfire.Core">
           <HintPath>..\packages\HangFire.Core\lib\net45\Hangfire.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Hangfire.MemoryStorage">
+          <HintPath>..\packages\Hangfire.MemoryStorage\lib\net45\Hangfire.MemoryStorage.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

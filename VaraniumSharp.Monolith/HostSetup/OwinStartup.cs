@@ -1,5 +1,6 @@
 ﻿using Owin;
 using VaraniumSharp.Attributes;
+using VaraniumSharp.Monolith.Hangfire;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 using VaraniumSharp.Monolith.Interfaces.HostSetup;
 

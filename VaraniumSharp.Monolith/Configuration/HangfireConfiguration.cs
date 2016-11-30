@@ -5,6 +5,7 @@ using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
 using VaraniumSharp.Extensions;
 using VaraniumSharp.Monolith.Enumerations;
+using VaraniumSharp.Monolith.Hangfire;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 
 namespace VaraniumSharp.Monolith.Configuration
@@ -21,9 +22,13 @@ namespace VaraniumSharp.Monolith.Configuration
         /// Constructor
         /// </summary>
         /// <param name="hangfireStorageConfigurations">Collection of all Hangfire Storage Provider configurations</param>
-        public HangfireConfiguration(List<HangfireStorageConfigurationBase> hangfireStorageConfigurations)
+        /// <param name="hangfireContainerJobActivator">Hangfire JobActivator using DryIoC</param>
+        /// <param name="jobs">Jobs to execute</param>
+        public HangfireConfiguration(List<HangfireStorageConfigurationBase> hangfireStorageConfigurations, JobActivator hangfireContainerJobActivator, List<HangfireJobBase> jobs)
         {
             _hangfireStorageConfigurations = hangfireStorageConfigurations;
+            _hangfireContainerJobActivator = hangfireContainerJobActivator;
+            _jobs = jobs;
         }
 
         #endregion
@@ -58,10 +63,8 @@ namespace VaraniumSharp.Monolith.Configuration
             }
 
             var hangfireConfiguration = GlobalConfiguration.Configuration;
-            foreach (var config in _hangfireStorageConfigurations)
-            {
-                config.Apply(hangfireConfiguration);
-            }
+            hangfireConfiguration.UseActivator(_hangfireContainerJobActivator);
+            _hangfireStorageConfigurations.ForEach(config => config.Apply(hangfireConfiguration));
 
             if (EnableDashboard)
             {
@@ -69,13 +72,19 @@ namespace VaraniumSharp.Monolith.Configuration
             }
 
             appBuilder.UseHangfireServer();
+
+            _jobs.ForEach(t => t.Setup());
         }
 
         #endregion
 
         #region Variables
 
+        private readonly JobActivator _hangfireContainerJobActivator;
+
         private readonly List<HangfireStorageConfigurationBase> _hangfireStorageConfigurations;
+
+        private readonly List<HangfireJobBase> _jobs;
 
         #endregion
     }
