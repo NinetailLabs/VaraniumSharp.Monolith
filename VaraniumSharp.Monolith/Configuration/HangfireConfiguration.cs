@@ -1,6 +1,7 @@
 ﻿using Hangfire;
 using Owin;
 using System.Collections.Generic;
+using System.Linq;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
 using VaraniumSharp.Extensions;
@@ -24,11 +25,11 @@ namespace VaraniumSharp.Monolith.Configuration
         /// <param name="hangfireStorageConfigurations">Collection of all Hangfire Storage Provider configurations</param>
         /// <param name="hangfireContainerJobActivator">Hangfire JobActivator using DryIoC</param>
         /// <param name="jobs">Jobs to execute</param>
-        public HangfireConfiguration(List<HangfireStorageConfigurationBase> hangfireStorageConfigurations, JobActivator hangfireContainerJobActivator, List<HangfireJobBase> jobs)
+        public HangfireConfiguration(IEnumerable<HangfireStorageConfigurationBase> hangfireStorageConfigurations, JobActivator hangfireContainerJobActivator, IEnumerable<HangfireJobBase> jobs)
         {
-            _hangfireStorageConfigurations = hangfireStorageConfigurations;
+            _hangfireStorageConfigurations = hangfireStorageConfigurations.ToList();
             _hangfireContainerJobActivator = hangfireContainerJobActivator;
-            _jobs = jobs;
+            _jobs = jobs.ToList();
         }
 
         #endregion
