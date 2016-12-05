@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\HangfireConfiguration.cs" />
+    <Compile Include="Enumerations\TopShelfCommandLineArguments.cs" />
+    <Compile Include="Extensions\HostConfiguratorExtensions.cs" />
     <Compile Include="Hangfire\HangfireContainerJobActivator.cs" />
     <Compile Include="Configuration\HangfireMemoryStorageConfiguration.cs" />
     <Compile Include="Configuration\HangfireSqlStorageProviderConfiguration.cs" />
