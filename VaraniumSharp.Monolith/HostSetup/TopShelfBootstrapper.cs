@@ -1,6 +1,9 @@
-﻿using Topshelf;
+﻿using System;
+using System.Linq;
+using Topshelf;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
+using VaraniumSharp.Monolith.Extensions;
 using VaraniumSharp.Monolith.Interfaces;
 
 namespace VaraniumSharp.Monolith.HostSetup
@@ -43,8 +46,7 @@ namespace VaraniumSharp.Monolith.HostSetup
         {
             TopShelfHost = HostFactory.New(x =>
             {
-                //This line is required otherwise ReSharper unit test won't run
-                x.ApplyCommandLine("");
+                x.ApplyValidCommandLine(Environment.GetCommandLineArgs().ToList());
                 x.UseSerilog();
                 x.Service<ITopShelfService>(s =>
                 {

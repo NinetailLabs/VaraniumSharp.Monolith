@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Configuration\ContainerSetupExtensionsTests.cs" />
     <Compile Include="Configuration\HangfireConfigurationTests.cs" />
+    <Compile Include="Extensions\HostConfiguratorExtensionsTests.cs" />
     <Compile Include="HangfireHelperFixture.cs" />
     <Compile Include="Hangfire\HangfireContainerJobActivatorTests.cs" />
     <Compile Include="Configuration\HangfireMemoryStorageConfigurationTests.cs" />
