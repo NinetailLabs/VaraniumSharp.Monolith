@@ -33,8 +33,8 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// <param name="app"></param>
         public void Configuration(IAppBuilder app)
         {
-            app.UseNancy();
             app.UseHangfire(_hangfireConfiguration);
+            app.UseNancy();
         }
 
         #endregion
