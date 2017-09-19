@@ -9,14 +9,17 @@ nuget Hangfire.MemoryStorage >= 1.3.0
 nuget HangFire.SqlServer >= 1.6.6
 nuget HttpMock >= 1.3.1
 nuget Moq >= 4.5.9
+nuget Microsoft.IdentityModel.Tokens >= 5.1.4
 nuget Microsoft.Owin.Hosting >= 3.0.1
 nuget Microsoft.Owin.Host.HttpListener >= 3.0.1
 nuget Nancy.Owin ~> 1.4.1
 nuget Nancy.Bootstrappers.DryIoc >= 1.4.3
 nuget NUnit ~> 3.4
+nuget Owin.StatelessAuth >= 1.0.10
 nuget PushoverNET >= 1.0.4
 nuget ServiceStack.Text ~> 3.9.59
 nuget SemVer.Git.MSBuild >= 1.1.0 content:once
+nuget System.IdentityModel.Tokens.Jwt >= 5.1.4
 nuget Topshelf  >= 4.0.3
 nuget Topshelf.Serilog  >= 4.0.3
 nuget VaraniumSharp.Initiator >= 1.4.0

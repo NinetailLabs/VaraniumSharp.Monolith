@@ -48,6 +48,26 @@
         public const string PushoverEnabled = "pushover.isenabled";
 
         /// <summary>
+        /// Indicate if the token must have an 'expiration' value
+        /// </summary>
+        public const string OAuthRequireExperationTime = "oauthvalidator.requireexpirationtime";
+
+        /// <summary>
+        /// The Url from where the Identity Server's public keys can be downloaded
+        /// </summary>
+        public const string OAuthSigningKeysUrl = "oauthvalidator.signingkeysurl";
+
+        /// <summary>
+        /// Valid audience that will be used to check against the token's audience
+        /// </summary>
+        public const string OAuthTargetAudiance = "oauthvalidator.targetaudience";
+
+        /// <summary>
+        /// Issuer that will be checked against the token's issuer
+        /// </summary>
+        public const string OAuthValidIssuer = "oauthvalidator.validissuer";
+
+        /// <summary>
         /// Host address of the service
         /// </summary>
         public const string ServiceHost = "service.host";
