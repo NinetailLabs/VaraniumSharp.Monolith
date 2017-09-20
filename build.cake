@@ -1,54 +1,49 @@
 //Addins
-#addin nuget:?package=Cake.Coveralls
-#addin nuget:?package=Cake.DocFx
-#addin nuget:?package=Cake.FileHelpers
-#addin nuget:?package=Cake.Git
-#addin nuget:?package=Cake.PaketRestore
-#addin nuget:?package=Cake.VersionReader
+#addin Cake.VersionReader
+#addin Cake.FileHelpers
+#tool "nuget:?package=NUnit.ConsoleRunner"
+#tool "nuget:?package=JetBrains.dotCover.CommandLineTools"
+#tool "nuget:?package=GitReleaseNotes"
 
-//Tools
-#tool nuget:?package=docfx.console
-#tool nuget:?package=GitReleaseNotes
-#tool nuget:?package=NUnit.ConsoleRunner
-#tool nuget:?package=OpenCover
-//#tool nuget:?package=coveralls.io
-
-//Project Variables
-var projectName = "VaraniumSharp.Monolith";
-var sln = string.Format("./{0}.sln", projectName);
-var releaseFolder = string.Format("./{0}/bin/Release", projectName);
-var releaseDll = string.Format("/{0}.dll", projectName);
-var nuspecFile = string.Format("./{0}/{0}.nuspec", projectName);
-var paketDirectory = "./.paket";
-
-//Unit Tests
-var unitTestFilter = "./*Tests/bin/Release/*.Tests.dll";
+var tools = "./tools";
+var sln = "./VaraniumSharp.Monolith.sln";
+var releaseFolder = "./VaraniumSharp.Monolith/bin/Release";
+var releaseDll = "/VaraniumSharp.Monolith.dll";
+var unitTestPaths = "./VaraniumSharp.Monolith.Tests/bin/Release/VaraniumSharp.Monolith.Tests.dll";
+var nuspecFile = "./VaraniumSharp.Monolith/VaraniumSharp.Monolith.nuspec";
 var testResultFile = "./TestResult.xml";
-var errorResultFile = "./ErrorResult.xml";
+var testErrorFile = "./errors.xml";
 var releaseNotes = "./ReleaseNotes.md";
-var testsSucceeded = true;
 
-//Coverage Settings
-var coverallRepoToken = "";
-
-//Arguments
 var target = Argument ("target", "Build");
 var buildType = Argument<string>("buildType", "develop");
 var buildCounter = Argument<int>("buildCounter", 0);
 
-//Execution Variables
 var version = "0.0.0";
 var ciVersion = "0.0.0-CI00000";
 var runningOnTeamCity = false;
 var runningOnAppVeyor = false;
+var testSucceeded = true;
 var releaseNotesText = "";
 
-//Code Coverage
-var coverPath = "./coverageResults.xml";
+//Paket folders
+var paketBootstrapper = "./.paket/paket.bootstrapper.exe";
+var paketExecutable = "./.paket/paket.exe";
+var paketBootstrapperUrl = "https://github.com/fsprojects/Paket/releases/download/3.1.9/paket.bootstrapper.exe";
+
+//SonarQube
+var sonarUrl = "https://github.com/SonarSource-VisualStudio/sonar-scanner-msbuild/releases/download/2.1/MSBuild.SonarQube.Runner-2.1.zip";
+var sonarZipPath = tools + "/SonarQube.zip";
+var sonarQubeServerUrl = "https://sq.ninetaillabs.xyz/";
+var sonarQubeProject = "VaraniumSharp.Monolith";
+var sonarQubeKey = "";
+
+//DotCover
+var coverPath = "./dotcover.html";
 
 // Find out if we are running on a Build Server
-Task ("DiscoverBuildDetails")
-	.Does (() =>
+Task("DiscoverBuildDetails")
+	.Does(() =>
 	{
 		runningOnTeamCity = TeamCity.IsRunningOnTeamCity;
 		Information("Running on TeamCity: " + runningOnTeamCity);
@@ -56,14 +51,19 @@ Task ("DiscoverBuildDetails")
 		Information("Running on AppVeyor: " + runningOnAppVeyor);
 	});
 
-Task ("OutputVariables")
-	.Does (() =>
+Task("OutputVariables")
+	.Does(() =>
 	{
 		Information("BuildType: " + buildType);
 		Information("BuildCounter: " + buildCounter);
 	});
 
 Task ("Build")
+.IsDependentOn("OutputVariables")
+.IsDependentOn("DiscoverBuildDetails")
+.IsDependentOn("ToolSetup")
+.IsDependentOn("PaketRestore")
+.IsDependentOn("SonarQubeStartup")
 	.Does (() => {
 		DotNetBuild (sln, c => c.Configuration = "Release");
 		var file = MakeAbsolute(Directory(releaseFolder)) + releaseDll;
@@ -74,57 +74,45 @@ Task ("Build")
 		PushVersion(ciVersion);
 	});
 
-// Unit Tests
-Task ("UnitTests")
-    .Does (() =>
-    {
-        var blockText = "Unit Tests";
-        StartBlock(blockText);
+//Execute Unit tests
+Task("UnitTest")
+	.IsDependentOn("Build")
+	.Does(() =>
+	{
+		StartBlock("Unit Testing");
 
-        var testAssemblies = GetFiles(unitTestFilter);
+		var testAssemblies = GetFiles(unitTestPaths);
+		DotCoverAnalyse(tool => {
+				tool.NUnit3(testAssemblies, new NUnit3Settings {
+    				ErrorOutputFile = testErrorFile,
+					OutputFile = testResultFile,
+					WorkingDirectory = ".",
+					Work = MakeAbsolute(Directory("."))
+    			});
+			},
+			new FilePath(coverPath),
+			new DotCoverAnalyseSettings()
+			{
+				ReportType = DotCoverReportType.HTML
+			}
+				.WithFilter("+:VaraniumSharp.Monolith")
+    			.WithFilter("-:VaraniumSharp.Monolith.Tests")
+		);
 
-        OpenCover(tool =>
-        {
-            tool.NUnit3(testAssemblies, new NUnit3Settings
-            {
-                ErrorOutputFile = errorResultFile,
-                OutputFile = testResultFile,
-                TeamCity = runningOnTeamCity,
-                WorkingDirectory = ".",
-                Work = MakeAbsolute(Directory("."))
-            });
-        },
-        new FilePath(coverPath),
-        new OpenCoverSettings()
-			.WithFilter(string.Format("+[{0}]*", projectName))
-			.WithFilter(string.Format("-[{0}.Tests]*", projectName))
-			.ExcludeByAttribute("System.CodeDom.Compiler.GeneratedCodeAttribute")
-        );
+		PushTestResults(testResultFile);
 
-        PushTestResults(testResultFile);
-
-        if(FileExists(errorResultFile) && FileReadLines(errorResultFile).Count() > 0)
-        {
-            Information("Unit tests failed");
-            testsSucceeded = false;
-        }
-
-        EndBlock(blockText);
-    });
-
-Task ("CoverageUpload")
-	.Does (() => {
-
-		coverallRepoToken = "q9druxSR6pwxXsXlqejg0ESR4baBrNL7G";//EnvironmentVariable("CoverallRepoToken");
-
-		CoverallsIo(MakeAbsolute(File(coverPath)), new CoverallsIoSettings()
+		if(FileExists(testErrorFile) && FileReadLines(testErrorFile).Count() > 0)
 		{
-			RepoToken = coverallRepoToken
-		});
+			Information("Unit tests failed");
+			testSucceeded = false;
+		}
+		
+		EndBlock("Unit Testing");
 	});
 	
 Task ("GenerateReleaseNotes")
-	.Does (() => {
+	.WithCriteria (buildType == "master")
+	.Does(() => {
 		var releasePath = MakeAbsolute(File(releaseNotes));
 		GitReleaseNotes(releasePath, new GitReleaseNotesSettings{
 			    WorkingDirectory = ".",
@@ -133,12 +121,13 @@ Task ("GenerateReleaseNotes")
 		});
 
 		releaseNotesText = FileReadText(releasePath);
-		Information(releaseNotesText);
 	});
 
 Task ("Nuget")
+	.IsDependentOn ("SonarQubeShutdown")
+	.IsDependentOn ("GenerateReleaseNotes")
 	.Does (() => {
-		if(!testsSucceeded)
+		if(!testSucceeded)
 		{
 			Error("Unit tests failed - Cannot push to Nuget");
 			throw new Exception("Unit tests failed");
@@ -155,21 +144,22 @@ Task ("Nuget")
 	});
 
 //Restore Paket
-Task ("PaketRestore")
-	.Does (() => {
+Task("PaketRestore")
+	.Does(() => {
 		StartBlock("Restoring Paket");
-		
-		PaketRestore(MakeAbsolute(Directory(paketDirectory)), new PaketRestoreSettings{
-			RetrieveBootstrapper = true,
-			RetrievePaketExecutable = true
-		});
-
+		var paketBootstrapperFullPath = MakeAbsolute(File(paketBootstrapper));
+		if(!FileExists(paketBootstrapperFullPath))
+		{
+			DownloadFile(paketBootstrapperUrl, paketBootstrapperFullPath);
+		}
+		StartProcess(paketBootstrapper);
+		StartProcess(paketExecutable, new ProcessSettings{ Arguments = "restore" });
 		EndBlock("Restoring Paket");
 	});
 
-//Push to Nuget
 Task ("Push")
-	.WithCriteria (buildType == "master")
+	.WithCriteria(buildType == "master")
+	.IsDependentOn ("Nuget")
 	.Does (() => {
 		// Get the newest (by last write time) to publish
 		var newestNupkg = GetFiles ("nupkg/*.nupkg")
@@ -185,59 +175,46 @@ Task ("Push")
 		});
 	});
 
-Task ("Documentation")
-	.Does (() => {
-		var tool = "./tools/docfx.console/docfx.console/tools/docfx.exe";
-		StartProcess(tool, new ProcessSettings{Arguments = "docfx_project/docfx.json"});
-
-		if(buildType != "master")
+Task("ToolSetup")
+	.Does(() =>{
+		StartBlock("Tool Setup");
+		if(!FileExists(sonarZipPath))
 		{
-			Information("Documentation is only pushed for master branch");
-			return;
+			Information("Downloading SonarQube");
+			DownloadFile(sonarUrl, sonarZipPath);
 		}
-
-		var newDocumentationPath = MakeAbsolute(Directory("docfx_project/_site"));
-		var gitRepo = string.Format("https://github.com/NinetailLabs/{0}.git", projectName);
-		var botToken = EnvironmentVariable("BotToken");
-		var branch = "gh-pages";
-
-		Information("Cloning documentation branch");
-		GitClone(gitRepo, MakeAbsolute(Directory("docClone")), new GitCloneSettings{
-			BranchName = branch
-		});
-
-		Information("Preparing updated site");
-		CopyDirectory(MakeAbsolute(Directory("docClone/.git")), MakeAbsolute(Directory("docfx_project/_site/.git")));
-		GitAddAll(newDocumentationPath);
-
-		Information("Pushing updated documentation to repo");
-		GitCommit(newDocumentationPath, "NinetailLabsBot", "gitbot@ninetaillabs.com", "Documentation for " + version);
-		GitPush(newDocumentationPath, "NinetailLabsBot", botToken, branch);
-		Information("Completed Documentation update");
+		if(!FileExists(tools + "/MSBuild.SonarQube.Runner.exe"))
+		{
+			Information("Extraction SonarQube");
+			Unzip(tools + "/SonarQube.zip", tools + "/");
+		}
+		
+		EndBlock("Tool Setup");
 	});
 
-Task ("Default")
-	.IsDependentOn ("OutputVariables")
-	.IsDependentOn ("DiscoverBuildDetails")
-	.IsDependentOn ("PaketRestore")
-	.IsDependentOn ("Build")
-	.IsDependentOn ("UnitTests")
-	.IsDependentOn ("CoverageUpload")
-	//.IsDependentOn ("GenerateReleaseNotes")
-	.IsDependentOn ("Nuget")
-	.IsDependentOn ("Documentation");
+Task("SonarQubeStartup")
+	.Does(() =>{
+		StartBlock("SonarQube Startup");
 
-Task ("Release")
-	.IsDependentOn ("OutputVariables")
-	.IsDependentOn ("DiscoverBuildDetails")
-	.IsDependentOn ("PaketRestore")
-	.IsDependentOn ("Build")
-	.IsDependentOn ("UnitTests")
-	.IsDependentOn ("CoverageUpload")
-	//.IsDependentOn ("GenerateReleaseNotes")
-	.IsDependentOn ("Nuget")
-    .IsDependentOn ("Push")
-	.IsDependentOn ("Documentation");
+		sonarQubeKey = EnvironmentVariable("SonarQubeKey");
+		var testResult = MakeAbsolute(File(testResultFile));
+		var coveragePath = MakeAbsolute(File(coverPath));
+		var arguments = "begin /k:\"" + sonarQubeKey + "\" /n:\"" + sonarQubeProject + "\" /d:sonar.host.url=" + sonarQubeServerUrl + " /d:sonar.cs.dotcover.reportsPaths=\"" + coveragePath + "\" /v:\"" + buildCounter + "\"";
+		StartProcess(tools + "/MSBuild.SonarQube.Runner.exe", new ProcessSettings{ Arguments = arguments });
+	});
+
+Task("SonarQubeShutdown")
+	.IsDependentOn("UnitTest")
+	.Does(() => {
+		StartBlock("SonarQube Shutdown");
+		StartProcess(tools + "/MSBuild.SonarQube.Runner.exe", new ProcessSettings{ Arguments = "end" });
+		EndBlock("SonarQube Shutdown");
+	});
+
+Task("Default")
+	.IsDependentOn("SonarQubeShutdown");
+Task("Release")
+    .IsDependentOn("Push");
 
 RunTarget (target);
 
