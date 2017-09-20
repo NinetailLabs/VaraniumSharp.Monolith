@@ -1,0 +1,4 @@
+apiRules:
+- exclude:
+    uidRegex: ^VaraniumSharp.Monolith\.Tests
+    type: Type
