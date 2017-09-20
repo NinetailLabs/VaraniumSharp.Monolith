@@ -2,6 +2,7 @@
 using VaraniumSharp.Enumerations;
 using VaraniumSharp.Extensions;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
+using VaraniumSharp.Monolith.Security;
 using ConfigurationKeys = VaraniumSharp.Monolith.Enumerations.ConfigurationKeys;
 
 namespace VaraniumSharp.Monolith.Configuration
@@ -13,6 +14,26 @@ namespace VaraniumSharp.Monolith.Configuration
     public class OAuthTokenValidatorConfiguration : IOAuthTokenValidatorConfiguration
     {
         #region Properties
+
+        /// <summary>
+        /// Type of authentication
+        /// </summary>
+        public string AuthenticationType => ConfigurationKeys.OAuthAuthenticationType.GetConfigurationValue<string>();
+
+        /// <summary>
+        /// The key of the claim that should be used for the user's role
+        /// </summary>
+        public string ClaimRepresentingRole => ConfigurationKeys.OAuthClaimRepresentingRole.GetConfigurationValue<string>();
+
+        /// <summary>
+        /// The key of the claim that should be used for the user's username
+        /// </summary>
+        public string ClaimRepresentingUsername => ConfigurationKeys.OAuthClaimRepresetingUsername.GetConfigurationValue<string>();
+
+        /// <summary>
+        /// Indicate if the <see cref="ValidationHandler"/> should be used
+        /// </summary>
+        public bool Enabled => ConfigurationKeys.OAuthAuthenticationEnabled.GetConfigurationValue<bool>();
 
         /// <summary>
         /// Indicate if the token must have an 'expiration' time

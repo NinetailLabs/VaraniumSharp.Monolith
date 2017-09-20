@@ -58,7 +58,10 @@
     <Compile Include="Hangfire\Hangfire.cs" />
     <Compile Include="Interfaces\Wrappers\IPushoverWrapper.cs" />
     <Compile Include="Interfaces\Notifications\IPushoverNotifier.cs" />
+    <Compile Include="Interfaces\Security\IOAuthTokenValidator.cs" />
     <Compile Include="Security\OAuthTokenValidator.cs" />
+    <Compile Include="Security\StatelessOAuthValidation.cs" />
+    <Compile Include="Security\ValidationHandler.cs" />
     <Compile Include="Wrappers\PushoverWrapper.cs" />
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />

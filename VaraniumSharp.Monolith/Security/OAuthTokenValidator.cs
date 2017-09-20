@@ -6,15 +6,19 @@ using System.Diagnostics.CodeAnalysis;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Threading.Tasks;
+using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
 using VaraniumSharp.Monolith.Exceptions;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
+using VaraniumSharp.Monolith.Interfaces.Security;
 
 namespace VaraniumSharp.Monolith.Security
 {
     /// <summary>
     /// Validates OAuth tokens
     /// </summary>
-    public class OAuthTokenValidator
+    [AutomaticContainerRegistration(typeof(IOAuthTokenValidator), ServiceReuse.Singleton)]
+    public class OAuthTokenValidator : IOAuthTokenValidator
     {
         #region Constructor
 
@@ -73,6 +77,7 @@ namespace VaraniumSharp.Monolith.Security
         /// </summary>
         /// <param name="token">String containing the token to validate</param>
         /// <returns>Security token if the token is valid</returns>
+        [SuppressMessage("ReSharper", "NotAccessedVariable", Justification = "Token isn't used but is required in order to check validity")]
         public JwtSecurityToken ValidateToken(string token)
         {
             // See https://auth0.com/docs/api-auth/tutorials/verify-access-token

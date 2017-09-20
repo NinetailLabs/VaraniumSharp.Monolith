@@ -1,4 +1,6 @@
-﻿namespace VaraniumSharp.Monolith.Enumerations
+﻿using VaraniumSharp.Monolith.Security;
+
+namespace VaraniumSharp.Monolith.Enumerations
 {
     /// <summary>
     /// Contains keys for reading configuration values from App.config
@@ -46,6 +48,26 @@
         /// Key indicating if Pushover is enabled
         /// </summary>
         public const string PushoverEnabled = "pushover.isenabled";
+
+        /// <summary>
+        /// Indicate if the <see cref="ValidationHandler"/> should be used
+        /// </summary>
+        public const string OAuthAuthenticationEnabled = "oauthvalidator.enabled";
+
+        /// <summary>
+        /// Type of authentication
+        /// </summary>
+        public const string OAuthAuthenticationType = "oauthvalidator.authenticationtype";
+
+        /// <summary>
+        /// The key of the claim that should be used for the user's role
+        /// </summary>
+        public const string OAuthClaimRepresentingRole = "oauthvalidator.claimrepresentingrole";
+
+        /// <summary>
+        /// The key of the claim that should be used for the user's username
+        /// </summary>
+        public const string OAuthClaimRepresetingUsername = "oauthvalidator.claimrepresentingusername";
 
         /// <summary>
         /// Indicate if the token must have an 'expiration' value
