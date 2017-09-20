@@ -35,7 +35,7 @@
    </metadata>
 
    <files>
-      <file src="/bin/Release/VaraniumSharp.Monolith.dll" target="lib/net462" />
-      <file src="/bin/Release/VaraniumSharp.Monolith.xml" target="lib/net462" />      
+      <file src="./bin/Release/VaraniumSharp.Monolith.dll" target="lib\net462" />
+      <file src="./bin/Release/VaraniumSharp.Monolith.xml" target="lib\net462" />      
    </files>
 </package>

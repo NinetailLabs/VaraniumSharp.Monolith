@@ -11,7 +11,7 @@
 #tool nuget:?package=GitReleaseNotes
 #tool nuget:?package=NUnit.ConsoleRunner
 #tool nuget:?package=OpenCover
-#tool nuget:?package=coveralls.io
+//#tool nuget:?package=coveralls.io
 
 //Project Variables
 var projectName = "VaraniumSharp.Monolith";
@@ -115,9 +115,9 @@ Task ("UnitTests")
 Task ("CoverageUpload")
 	.Does (() => {
 
-		coverallRepoToken = EnvironmentVariable("CoverallRepoToken");
+		coverallRepoToken = "q9druxSR6pwxXsXlqejg0ESR4baBrNL7G";//EnvironmentVariable("CoverallRepoToken");
 
-		CoverallsIo(coverPath, new CoverallsIoSettings()
+		CoverallsIo(MakeAbsolute(File(coverPath)), new CoverallsIoSettings()
 		{
 			RepoToken = coverallRepoToken
 		});
@@ -187,7 +187,7 @@ Task ("Push")
 
 Task ("Documentation")
 	.Does (() => {
-		var tool = "./tools/docfx.console/tools/docfx.exe";
+		var tool = "./tools/docfx.console/docfx.console/tools/docfx.exe";
 		StartProcess(tool, new ProcessSettings{Arguments = "docfx_project/docfx.json"});
 
 		if(buildType != "master")
@@ -222,6 +222,7 @@ Task ("Default")
 	.IsDependentOn ("PaketRestore")
 	.IsDependentOn ("Build")
 	.IsDependentOn ("UnitTests")
+	.IsDependentOn ("CoverageUpload")
 	//.IsDependentOn ("GenerateReleaseNotes")
 	.IsDependentOn ("Nuget")
 	.IsDependentOn ("Documentation");
