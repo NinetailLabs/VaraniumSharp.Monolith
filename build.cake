@@ -124,7 +124,6 @@ Task ("GenerateReleaseNotes")
 	});
 
 Task ("Nuget")
-	.WithCriteria(buildType == "master")
 	.IsDependentOn ("SonarQubeShutdown")
 	.IsDependentOn ("GenerateReleaseNotes")
 	.Does (() => {
