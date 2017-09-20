@@ -2,13 +2,16 @@
 Hangfire
 Hangfire.MemoryStorage
 HangFire.SqlServer
+Microsoft.IdentityModel.Tokens
 Microsoft.Owin.Hosting
 Microsoft.Owin.Host.HttpListener
 Nancy.Owin
 Nancy.Bootstrappers.DryIoc
+Owin.StatelessAuth
 PushoverNET
 SemVer.Git.MSBuild
 ServiceStack.Text
+System.IdentityModel.Tokens.Jwt
 Topshelf
 TopShelf.Serilog
 VaraniumSharp.Initiator

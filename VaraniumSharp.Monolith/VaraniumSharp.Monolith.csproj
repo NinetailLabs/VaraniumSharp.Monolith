@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\HangfireConfiguration.cs" />
+    <Compile Include="Exceptions\SigningKeysException.cs" />
+    <Compile Include="Interfaces\Configuration\IOAuthTokenValidatorConfiguration.cs" />
+    <Compile Include="Configuration\OAuthTokenValidatorConfiguration.cs" />
     <Compile Include="Enumerations\TopShelfCommandLineArguments.cs" />
     <Compile Include="Extensions\HostConfiguratorExtensions.cs" />
     <Compile Include="Hangfire\HangfireContainerJobActivator.cs" />
@@ -55,6 +58,10 @@
     <Compile Include="Hangfire\Hangfire.cs" />
     <Compile Include="Interfaces\Wrappers\IPushoverWrapper.cs" />
     <Compile Include="Interfaces\Notifications\IPushoverNotifier.cs" />
+    <Compile Include="Interfaces\Security\IOAuthTokenValidator.cs" />
+    <Compile Include="Security\OAuthTokenValidator.cs" />
+    <Compile Include="Security\StatelessOAuthValidation.cs" />
+    <Compile Include="Security\ValidationHandler.cs" />
     <Compile Include="Wrappers\PushoverWrapper.cs" />
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\HostConfiguration.cs" />
@@ -133,6 +140,28 @@
       <ItemGroup>
         <Reference Include="Hangfire.SqlServer">
           <HintPath>..\packages\HangFire.SqlServer\lib\net45\Hangfire.SqlServer.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v5.0')">
+      <ItemGroup>
+        <Reference Include="Microsoft.IdentityModel.Logging">
+          <HintPath>..\packages\Microsoft.IdentityModel.Logging\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v5.0')">
+      <ItemGroup>
+        <Reference Include="Microsoft.IdentityModel.Tokens">
+          <HintPath>..\packages\Microsoft.IdentityModel.Tokens\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -232,6 +261,22 @@
       <ItemGroup>
         <Reference Include="Owin">
           <HintPath>..\packages\Owin\lib\net40\Owin.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v5.0')">
+      <ItemGroup>
+        <Reference Include="Minimatch">
+          <HintPath>..\packages\Owin.StatelessAuth\lib\net45\Minimatch.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Owin.StatelessAuth">
+          <HintPath>..\packages\Owin.StatelessAuth\lib\net45\Owin.StatelessAuth.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -353,6 +398,17 @@
       <ItemGroup>
         <Reference Include="Splunk.Logging.Common">
           <HintPath>..\packages\Splunk.Logging.Common\lib\net45\Splunk.Logging.Common.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v5.0')">
+      <ItemGroup>
+        <Reference Include="System.IdentityModel.Tokens.Jwt">
+          <HintPath>..\packages\System.IdentityModel.Tokens.Jwt\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
