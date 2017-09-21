@@ -98,6 +98,7 @@ NUGET
     Microsoft.IdentityModel.Tokens (5.1.4)
       Microsoft.IdentityModel.Logging (>= 1.1.4)
       Newtonsoft.Json (>= 9.0.1)
+    msdn.4.5.2 (0.1.0-alpha-1611021200)
     Owin.StatelessAuth (1.0.10)
     System.Collections (4.3)
     System.Diagnostics.Debug (4.3)
