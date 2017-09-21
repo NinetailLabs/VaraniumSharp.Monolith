@@ -2,12 +2,15 @@
 Hangfire
 Hangfire.MemoryStorage
 HttpMock
+Microsoft.IdentityModel.Tokens
 Microsoft.Owin.Hosting
 Microsoft.Owin.Host.HttpListener
 Moq
 Nancy.Owin
 NUnit
+Owin.StatelessAuth
 PushoverNET
 ServiceStack.Text
+System.IdentityModel.Tokens.Jwt
 VaraniumSharp.Initiator
 Topshelf

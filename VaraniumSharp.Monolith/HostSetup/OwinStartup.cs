@@ -1,8 +1,10 @@
 ﻿using Owin;
+using Owin.StatelessAuth;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Monolith.Hangfire;
 using VaraniumSharp.Monolith.Interfaces.Configuration;
 using VaraniumSharp.Monolith.Interfaces.HostSetup;
+using VaraniumSharp.Monolith.Security;
 
 namespace VaraniumSharp.Monolith.HostSetup
 {
@@ -18,9 +20,13 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// Constructor
         /// </summary>
         /// <param name="hangfireConfiguration">Hangfire Configuration</param>
-        public OwinStartup(IHangfireConfiguration hangfireConfiguration)
+        /// <param name="oAuthTokenValidatorConfiguration">OAuthTokenValidator Configuration</param>
+        /// <param name="tokenValidator">TokenValidator instance</param>
+        public OwinStartup(IHangfireConfiguration hangfireConfiguration, IOAuthTokenValidatorConfiguration oAuthTokenValidatorConfiguration, ITokenValidator tokenValidator)
         {
             _hangfireConfiguration = hangfireConfiguration;
+            _authTokenValidatorConfiguration = oAuthTokenValidatorConfiguration;
+            _tokenValidator = tokenValidator;
         }
 
         #endregion
@@ -33,6 +39,7 @@ namespace VaraniumSharp.Monolith.HostSetup
         /// <param name="app"></param>
         public void Configuration(IAppBuilder app)
         {
+            app.UserStatelessOAuthTokenValidation(_tokenValidator, _authTokenValidatorConfiguration);
             app.UseHangfire(_hangfireConfiguration);
             app.UseNancy();
         }
@@ -41,7 +48,10 @@ namespace VaraniumSharp.Monolith.HostSetup
 
         #region Variables
 
+        private readonly IOAuthTokenValidatorConfiguration _authTokenValidatorConfiguration;
+
         private readonly IHangfireConfiguration _hangfireConfiguration;
+        private readonly ITokenValidator _tokenValidator;
 
         #endregion
     }
