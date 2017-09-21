@@ -7,5 +7,7 @@
 
 WebService chassis using the VaraniumSharp.Initiator library to provide base functionality
 
+For a detailed overview ot the library see our [documentation](https://ninetaillabs.github.io/VaraniumSharp.Monolith/index.html)
+
 ## Icon
 [Monolith](https://thenounproject.com/search/?q=monolith&i=242785) by [John T. Garcia](https://thenounproject.com/tongal/) from the Noun Project
