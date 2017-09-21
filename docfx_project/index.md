@@ -1,5 +1,7 @@
 # VaraniumSharp.Monolith
 
+![Logo](images/icon.png)
+
 [![Build status](https://ci.appveyor.com/api/projects/status/n8789i2iha2r38pt/branch/master?svg=true)](https://ci.appveyor.com/project/DeadlyEmbrace/varaniumsharp-monolith/branch/master)
 [![NuGet](https://img.shields.io/nuget/v/VaraniumSharp.Monolith.svg)](https://www.nuget.org/packages/VaraniumSharp.Monolith)
 [![Coverage Status](https://coveralls.io/repos/github/NinetailLabs/VaraniumSharp.Monolith/badge.svg?branch=master)](https://coveralls.io/github/NinetailLabs/VaraniumSharp.Monolith?branch=master)
