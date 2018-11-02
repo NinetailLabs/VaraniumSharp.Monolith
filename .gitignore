@@ -279,3 +279,4 @@ __pycache__/
 # tools/
 /ErrorResult.xml
 /coverageResults.xml
+/ReleaseNotes.md
