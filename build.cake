@@ -4,7 +4,7 @@
 #load "CakeScripts/base/base.buildsystem.cake"
 #load "CakeScripts/base/base.variables.cake"
 #load "CakeScripts/base/base.setup.cake"
-#load "CakeScripts/base/base.nuget.restore.cake"
+#load "CakeScripts/base/base.paket.restore.cake"
 #load "CakeScripts/base/base.msbuild.cake"
 #load "CakeScripts/base/base.nunit.cake"
 #load "CakeScripts/base/base.gitreleasenotes.cake"
@@ -27,7 +27,7 @@ Task ("VariableSetup")
 	.Does(() => {
 		projectName = "VaraniumSharp.Monolith";
 		releaseFolderString = "./{0}/bin/{1}";
-		releaseBinaryType = "exe";
+		releaseBinaryType = "dll";
 		repoOwner = "NinetailLabs";
 		botName = "NinetailLabsBot";
 		botEmail = "gitbot@ninetaillabs.com";
@@ -40,7 +40,7 @@ Task ("Default")
 	.IsDependentOn ("OutputVariables")
 	.IsDependentOn ("LocateFiles")
 	.IsDependentOn ("VariableSetup")
-	.IsDependentOn ("NugetRestore")
+	.IsDependentOn ("PaketRestore")
 	.IsDependentOn ("Build")
 	.IsDependentOn ("UnitTests")
 	.IsDependentOn ("GenerateReleaseNotes")
