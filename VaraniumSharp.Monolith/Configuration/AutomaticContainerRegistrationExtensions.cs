@@ -27,7 +27,9 @@ namespace VaraniumSharp.Monolith.Configuration
                 .ToList()
                 .ForEach(x => x.Apply(loggerConfiguration));
 
-            Log.Logger = loggerConfiguration.CreateLogger();
+            Log.Logger = loggerConfiguration
+                .Enrich.FromLogContext()
+                .CreateLogger();
         }
 
         #endregion
