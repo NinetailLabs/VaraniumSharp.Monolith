@@ -23,6 +23,7 @@ references:
   name: SetupLogging
   href: api/VaraniumSharp.Monolith.Configuration.AutomaticContainerRegistrationExtensions.html#VaraniumSharp_Monolith_Configuration_AutomaticContainerRegistrationExtensions_SetupLogging_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.AutomaticContainerRegistrationExtensions.SetupLogging
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.AutomaticContainerRegistrationExtensions.SetupLogging
   nameWithType: AutomaticContainerRegistrationExtensions.SetupLogging
 - uid: VaraniumSharp.Monolith.Configuration.HangfireConfiguration
@@ -44,6 +45,7 @@ references:
   name: HangfireConfiguration
   href: api/VaraniumSharp.Monolith.Configuration.HangfireConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireConfiguration__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireConfiguration.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.HangfireConfiguration
   nameWithType: HangfireConfiguration.HangfireConfiguration
 - uid: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.Enabled
@@ -56,6 +58,7 @@ references:
   name: Enabled
   href: api/VaraniumSharp.Monolith.Configuration.HangfireConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireConfiguration_Enabled_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireConfiguration.Enabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.Enabled
   nameWithType: HangfireConfiguration.Enabled
 - uid: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.EnableDashboard
@@ -68,6 +71,7 @@ references:
   name: EnableDashboard
   href: api/VaraniumSharp.Monolith.Configuration.HangfireConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireConfiguration_EnableDashboard_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireConfiguration.EnableDashboard
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.EnableDashboard
   nameWithType: HangfireConfiguration.EnableDashboard
 - uid: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.SetupHangfire(Owin.IAppBuilder)
@@ -80,6 +84,7 @@ references:
   name: SetupHangfire
   href: api/VaraniumSharp.Monolith.Configuration.HangfireConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireConfiguration_SetupHangfire_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireConfiguration.SetupHangfire
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireConfiguration.SetupHangfire
   nameWithType: HangfireConfiguration.SetupHangfire
 - uid: VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration
@@ -98,6 +103,7 @@ references:
   name: Enabled
   href: api/VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireMemoryStorageConfiguration_Enabled_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.Enabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.Enabled
   nameWithType: HangfireMemoryStorageConfiguration.Enabled
 - uid: VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.ProviderSetup(Hangfire.IGlobalConfiguration)
@@ -110,6 +116,7 @@ references:
   name: ProviderSetup
   href: api/VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireMemoryStorageConfiguration_ProviderSetup_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.ProviderSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireMemoryStorageConfiguration.ProviderSetup
   nameWithType: HangfireMemoryStorageConfiguration.ProviderSetup
 - uid: VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration
@@ -128,6 +135,7 @@ references:
   name: Enabled
   href: api/VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireSqlStorageProviderConfiguration_Enabled_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.Enabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.Enabled
   nameWithType: HangfireSqlStorageProviderConfiguration.Enabled
 - uid: VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.ProviderSetup(Hangfire.IGlobalConfiguration)
@@ -140,6 +148,7 @@ references:
   name: ProviderSetup
   href: api/VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireSqlStorageProviderConfiguration_ProviderSetup_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.ProviderSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.ProviderSetup
   nameWithType: HangfireSqlStorageProviderConfiguration.ProviderSetup
 - uid: VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.SqlConnectionString
@@ -152,6 +161,7 @@ references:
   name: SqlConnectionString
   href: api/VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.html#VaraniumSharp_Monolith_Configuration_HangfireSqlStorageProviderConfiguration_SqlConnectionString_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.SqlConnectionString
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireSqlStorageProviderConfiguration.SqlConnectionString
   nameWithType: HangfireSqlStorageProviderConfiguration.SqlConnectionString
 - uid: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase
@@ -170,6 +180,7 @@ references:
   name: Apply
   href: api/VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.html#VaraniumSharp_Monolith_Configuration_HangfireStorageConfigurationBase_Apply_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.Apply
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.Apply
   nameWithType: HangfireStorageConfigurationBase.Apply
 - uid: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.IsActive
@@ -182,6 +193,7 @@ references:
   name: IsActive
   href: api/VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.html#VaraniumSharp_Monolith_Configuration_HangfireStorageConfigurationBase_IsActive_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.IsActive
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.IsActive
   nameWithType: HangfireStorageConfigurationBase.IsActive
 - uid: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.ProviderSetup(Hangfire.IGlobalConfiguration)
@@ -194,6 +206,7 @@ references:
   name: ProviderSetup
   href: api/VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.html#VaraniumSharp_Monolith_Configuration_HangfireStorageConfigurationBase_ProviderSetup_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.ProviderSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.ProviderSetup
   nameWithType: HangfireStorageConfigurationBase.ProviderSetup
 - uid: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.WasApplied
@@ -206,6 +219,7 @@ references:
   name: WasApplied
   href: api/VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.html#VaraniumSharp_Monolith_Configuration_HangfireStorageConfigurationBase_WasApplied_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.WasApplied
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HangfireStorageConfigurationBase.WasApplied
   nameWithType: HangfireStorageConfigurationBase.WasApplied
 - uid: VaraniumSharp.Monolith.Configuration.HostConfiguration
@@ -224,6 +238,7 @@ references:
   name: Host
   href: api/VaraniumSharp.Monolith.Configuration.HostConfiguration.html#VaraniumSharp_Monolith_Configuration_HostConfiguration_Host_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HostConfiguration.Host
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HostConfiguration.Host
   nameWithType: HostConfiguration.Host
 - uid: VaraniumSharp.Monolith.Configuration.HostConfiguration.HostUrl
@@ -236,6 +251,7 @@ references:
   name: HostUrl
   href: api/VaraniumSharp.Monolith.Configuration.HostConfiguration.html#VaraniumSharp_Monolith_Configuration_HostConfiguration_HostUrl_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HostConfiguration.HostUrl
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HostConfiguration.HostUrl
   nameWithType: HostConfiguration.HostUrl
 - uid: VaraniumSharp.Monolith.Configuration.HostConfiguration.Port
@@ -248,6 +264,7 @@ references:
   name: Port
   href: api/VaraniumSharp.Monolith.Configuration.HostConfiguration.html#VaraniumSharp_Monolith_Configuration_HostConfiguration_Port_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.HostConfiguration.Port
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.HostConfiguration.Port
   nameWithType: HostConfiguration.Port
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration
@@ -266,6 +283,7 @@ references:
   name: AuthenticationType
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_AuthenticationType_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.AuthenticationType
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.AuthenticationType
   nameWithType: OAuthTokenValidatorConfiguration.AuthenticationType
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ClaimRepresentingRole
@@ -278,6 +296,7 @@ references:
   name: ClaimRepresentingRole
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_ClaimRepresentingRole_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ClaimRepresentingRole
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ClaimRepresentingRole
   nameWithType: OAuthTokenValidatorConfiguration.ClaimRepresentingRole
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ClaimRepresentingUsername
@@ -290,6 +309,7 @@ references:
   name: ClaimRepresentingUsername
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_ClaimRepresentingUsername_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ClaimRepresentingUsername
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ClaimRepresentingUsername
   nameWithType: OAuthTokenValidatorConfiguration.ClaimRepresentingUsername
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.Enabled
@@ -302,6 +322,7 @@ references:
   name: Enabled
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_Enabled_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.Enabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.Enabled
   nameWithType: OAuthTokenValidatorConfiguration.Enabled
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.RequiresExpirationTime
@@ -314,6 +335,7 @@ references:
   name: RequiresExpirationTime
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_RequiresExpirationTime_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.RequiresExpirationTime
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.RequiresExpirationTime
   nameWithType: OAuthTokenValidatorConfiguration.RequiresExpirationTime
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.SigningKeyUrl
@@ -326,6 +348,7 @@ references:
   name: SigningKeyUrl
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_SigningKeyUrl_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.SigningKeyUrl
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.SigningKeyUrl
   nameWithType: OAuthTokenValidatorConfiguration.SigningKeyUrl
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.TargetAudience
@@ -338,6 +361,7 @@ references:
   name: TargetAudience
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_TargetAudience_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.TargetAudience
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.TargetAudience
   nameWithType: OAuthTokenValidatorConfiguration.TargetAudience
 - uid: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ValidIssuer
@@ -350,6 +374,7 @@ references:
   name: ValidIssuer
   href: api/VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Configuration_OAuthTokenValidatorConfiguration_ValidIssuer_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ValidIssuer
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.OAuthTokenValidatorConfiguration.ValidIssuer
   nameWithType: OAuthTokenValidatorConfiguration.ValidIssuer
 - uid: VaraniumSharp.Monolith.Configuration.PushoverConfiguration
@@ -368,6 +393,7 @@ references:
   name: ApiToken
   href: api/VaraniumSharp.Monolith.Configuration.PushoverConfiguration.html#VaraniumSharp_Monolith_Configuration_PushoverConfiguration_ApiToken_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.PushoverConfiguration.ApiToken
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.PushoverConfiguration.ApiToken
   nameWithType: PushoverConfiguration.ApiToken
 - uid: VaraniumSharp.Monolith.Configuration.PushoverConfiguration.DefaultSendKey
@@ -380,6 +406,7 @@ references:
   name: DefaultSendKey
   href: api/VaraniumSharp.Monolith.Configuration.PushoverConfiguration.html#VaraniumSharp_Monolith_Configuration_PushoverConfiguration_DefaultSendKey_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.PushoverConfiguration.DefaultSendKey
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.PushoverConfiguration.DefaultSendKey
   nameWithType: PushoverConfiguration.DefaultSendKey
 - uid: VaraniumSharp.Monolith.Configuration.PushoverConfiguration.IsEnabled
@@ -392,6 +419,7 @@ references:
   name: IsEnabled
   href: api/VaraniumSharp.Monolith.Configuration.PushoverConfiguration.html#VaraniumSharp_Monolith_Configuration_PushoverConfiguration_IsEnabled_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.PushoverConfiguration.IsEnabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.PushoverConfiguration.IsEnabled
   nameWithType: PushoverConfiguration.IsEnabled
 - uid: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration
@@ -410,6 +438,7 @@ references:
   name: Description
   href: api/VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.html#VaraniumSharp_Monolith_Configuration_TopShelfConfiguration_Description_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.Description
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.Description
   nameWithType: TopShelfConfiguration.Description
 - uid: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.DisplayName
@@ -422,6 +451,7 @@ references:
   name: DisplayName
   href: api/VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.html#VaraniumSharp_Monolith_Configuration_TopShelfConfiguration_DisplayName_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.DisplayName
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.DisplayName
   nameWithType: TopShelfConfiguration.DisplayName
 - uid: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.Name
@@ -434,6 +464,7 @@ references:
   name: Name
   href: api/VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.html#VaraniumSharp_Monolith_Configuration_TopShelfConfiguration_Name_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.Name
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.Name
   nameWithType: TopShelfConfiguration.Name
 - uid: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.StartMode
@@ -446,6 +477,7 @@ references:
   name: StartMode
   href: api/VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.html#VaraniumSharp_Monolith_Configuration_TopShelfConfiguration_StartMode_
   commentId: Overload:VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.StartMode
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Configuration.TopShelfConfiguration.StartMode
   nameWithType: TopShelfConfiguration.StartMode
 - uid: VaraniumSharp.Monolith.Enumerations
@@ -644,6 +676,7 @@ references:
   name: SigningKeysException
   href: api/VaraniumSharp.Monolith.Exceptions.SigningKeysException.html#VaraniumSharp_Monolith_Exceptions_SigningKeysException__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Exceptions.SigningKeysException.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Exceptions.SigningKeysException.SigningKeysException
   nameWithType: SigningKeysException.SigningKeysException
 - uid: VaraniumSharp.Monolith.Extensions
@@ -671,6 +704,7 @@ references:
   name: ApplyValidCommandLine
   href: api/VaraniumSharp.Monolith.Extensions.HostConfiguratorExtensions.html#VaraniumSharp_Monolith_Extensions_HostConfiguratorExtensions_ApplyValidCommandLine_
   commentId: Overload:VaraniumSharp.Monolith.Extensions.HostConfiguratorExtensions.ApplyValidCommandLine
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Extensions.HostConfiguratorExtensions.ApplyValidCommandLine
   nameWithType: HostConfiguratorExtensions.ApplyValidCommandLine
 - uid: VaraniumSharp.Monolith.Hangfire
@@ -695,6 +729,7 @@ references:
   name: UseHangfire
   href: api/VaraniumSharp.Monolith.Hangfire.Hangfire.html#VaraniumSharp_Monolith_Hangfire_Hangfire_UseHangfire_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.Hangfire.UseHangfire
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.Hangfire.UseHangfire
   nameWithType: Hangfire.UseHangfire
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator
@@ -713,6 +748,7 @@ references:
   name: HangfireContainerJobActivator
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.html#VaraniumSharp_Monolith_Hangfire_HangfireContainerJobActivator__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.HangfireContainerJobActivator
   nameWithType: HangfireContainerJobActivator.HangfireContainerJobActivator
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.ActivateJob(System.Type)
@@ -725,6 +761,7 @@ references:
   name: ActivateJob
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.html#VaraniumSharp_Monolith_Hangfire_HangfireContainerJobActivator_ActivateJob_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.ActivateJob
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireContainerJobActivator.ActivateJob
   nameWithType: HangfireContainerJobActivator.ActivateJob
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireJobBase
@@ -743,6 +780,7 @@ references:
   name: Execute
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireJobBase.html#VaraniumSharp_Monolith_Hangfire_HangfireJobBase_Execute_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireJobBase.Execute
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireJobBase.Execute
   nameWithType: HangfireJobBase.Execute
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireJobBase.Setup
@@ -755,6 +793,7 @@ references:
   name: Setup
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireJobBase.html#VaraniumSharp_Monolith_Hangfire_HangfireJobBase_Setup_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireJobBase.Setup
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireJobBase.Setup
   nameWithType: HangfireJobBase.Setup
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase
@@ -779,6 +818,7 @@ references:
   name: HangfireReccuringJobBase
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.html#VaraniumSharp_Monolith_Hangfire_HangfireReccuringJobBase__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.HangfireReccuringJobBase
   nameWithType: HangfireReccuringJobBase.HangfireReccuringJobBase
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.CronSchedule
@@ -791,6 +831,7 @@ references:
   name: CronSchedule
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.html#VaraniumSharp_Monolith_Hangfire_HangfireReccuringJobBase_CronSchedule_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.CronSchedule
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.CronSchedule
   nameWithType: HangfireReccuringJobBase.CronSchedule
 - uid: VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.Setup
@@ -803,6 +844,7 @@ references:
   name: Setup
   href: api/VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.html#VaraniumSharp_Monolith_Hangfire_HangfireReccuringJobBase_Setup_
   commentId: Overload:VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.Setup
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Hangfire.HangfireReccuringJobBase.Setup
   nameWithType: HangfireReccuringJobBase.Setup
 - uid: VaraniumSharp.Monolith.HostSetup
@@ -827,6 +869,7 @@ references:
   name: OwinHostTopShelfService
   href: api/VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.html#VaraniumSharp_Monolith_HostSetup_OwinHostTopShelfService__ctor_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.OwinHostTopShelfService
   nameWithType: OwinHostTopShelfService.OwinHostTopShelfService
 - uid: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.HostConfiguration
@@ -839,6 +882,7 @@ references:
   name: HostConfiguration
   href: api/VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.html#VaraniumSharp_Monolith_HostSetup_OwinHostTopShelfService_HostConfiguration_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.HostConfiguration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.HostConfiguration
   nameWithType: OwinHostTopShelfService.HostConfiguration
 - uid: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.Start
@@ -851,6 +895,7 @@ references:
   name: Start
   href: api/VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.html#VaraniumSharp_Monolith_HostSetup_OwinHostTopShelfService_Start_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.Start
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.Start
   nameWithType: OwinHostTopShelfService.Start
 - uid: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.Stop
@@ -863,6 +908,7 @@ references:
   name: Stop
   href: api/VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.html#VaraniumSharp_Monolith_HostSetup_OwinHostTopShelfService_Stop_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.Stop
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.Stop
   nameWithType: OwinHostTopShelfService.Stop
 - uid: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.TopShelfConfiguration
@@ -875,6 +921,7 @@ references:
   name: TopShelfConfiguration
   href: api/VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.html#VaraniumSharp_Monolith_HostSetup_OwinHostTopShelfService_TopShelfConfiguration_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.TopShelfConfiguration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinHostTopShelfService.TopShelfConfiguration
   nameWithType: OwinHostTopShelfService.TopShelfConfiguration
 - uid: VaraniumSharp.Monolith.HostSetup.OwinStartup
@@ -893,6 +940,7 @@ references:
   name: OwinStartup
   href: api/VaraniumSharp.Monolith.HostSetup.OwinStartup.html#VaraniumSharp_Monolith_HostSetup_OwinStartup__ctor_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinStartup.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinStartup.OwinStartup
   nameWithType: OwinStartup.OwinStartup
 - uid: VaraniumSharp.Monolith.HostSetup.OwinStartup.Configuration(Owin.IAppBuilder)
@@ -905,6 +953,7 @@ references:
   name: Configuration
   href: api/VaraniumSharp.Monolith.HostSetup.OwinStartup.html#VaraniumSharp_Monolith_HostSetup_OwinStartup_Configuration_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.OwinStartup.Configuration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.OwinStartup.Configuration
   nameWithType: OwinStartup.Configuration
 - uid: VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper
@@ -923,6 +972,7 @@ references:
   name: TopShelfBootstrapper
   href: api/VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.html#VaraniumSharp_Monolith_HostSetup_TopShelfBootstrapper__ctor_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.TopShelfBootstrapper
   nameWithType: TopShelfBootstrapper.TopShelfBootstrapper
 - uid: VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.TopShelfHost
@@ -935,6 +985,7 @@ references:
   name: TopShelfHost
   href: api/VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.html#VaraniumSharp_Monolith_HostSetup_TopShelfBootstrapper_TopShelfHost_
   commentId: Overload:VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.TopShelfHost
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.HostSetup.TopShelfBootstrapper.TopShelfHost
   nameWithType: TopShelfBootstrapper.TopShelfHost
 - uid: VaraniumSharp.Monolith.Interfaces
@@ -965,6 +1016,7 @@ references:
   name: Enabled
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IHangfireConfiguration_Enabled_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.Enabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.Enabled
   nameWithType: IHangfireConfiguration.Enabled
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.EnableDashboard
@@ -977,6 +1029,7 @@ references:
   name: EnableDashboard
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IHangfireConfiguration_EnableDashboard_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.EnableDashboard
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.EnableDashboard
   nameWithType: IHangfireConfiguration.EnableDashboard
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.SetupHangfire(Owin.IAppBuilder)
@@ -989,6 +1042,7 @@ references:
   name: SetupHangfire
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IHangfireConfiguration_SetupHangfire_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.SetupHangfire
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IHangfireConfiguration.SetupHangfire
   nameWithType: IHangfireConfiguration.SetupHangfire
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration
@@ -1007,6 +1061,7 @@ references:
   name: AuthenticationType
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_AuthenticationType_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.AuthenticationType
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.AuthenticationType
   nameWithType: IOAuthTokenValidatorConfiguration.AuthenticationType
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ClaimRepresentingRole
@@ -1019,6 +1074,7 @@ references:
   name: ClaimRepresentingRole
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_ClaimRepresentingRole_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ClaimRepresentingRole
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ClaimRepresentingRole
   nameWithType: IOAuthTokenValidatorConfiguration.ClaimRepresentingRole
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ClaimRepresentingUsername
@@ -1031,6 +1087,7 @@ references:
   name: ClaimRepresentingUsername
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_ClaimRepresentingUsername_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ClaimRepresentingUsername
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ClaimRepresentingUsername
   nameWithType: IOAuthTokenValidatorConfiguration.ClaimRepresentingUsername
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.Enabled
@@ -1043,6 +1100,7 @@ references:
   name: Enabled
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_Enabled_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.Enabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.Enabled
   nameWithType: IOAuthTokenValidatorConfiguration.Enabled
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.RequiresExpirationTime
@@ -1055,6 +1113,7 @@ references:
   name: RequiresExpirationTime
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_RequiresExpirationTime_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.RequiresExpirationTime
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.RequiresExpirationTime
   nameWithType: IOAuthTokenValidatorConfiguration.RequiresExpirationTime
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.SigningKeyUrl
@@ -1067,6 +1126,7 @@ references:
   name: SigningKeyUrl
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_SigningKeyUrl_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.SigningKeyUrl
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.SigningKeyUrl
   nameWithType: IOAuthTokenValidatorConfiguration.SigningKeyUrl
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.TargetAudience
@@ -1079,6 +1139,7 @@ references:
   name: TargetAudience
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_TargetAudience_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.TargetAudience
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.TargetAudience
   nameWithType: IOAuthTokenValidatorConfiguration.TargetAudience
 - uid: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ValidIssuer
@@ -1091,6 +1152,7 @@ references:
   name: ValidIssuer
   href: api/VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.html#VaraniumSharp_Monolith_Interfaces_Configuration_IOAuthTokenValidatorConfiguration_ValidIssuer_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ValidIssuer
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Configuration.IOAuthTokenValidatorConfiguration.ValidIssuer
   nameWithType: IOAuthTokenValidatorConfiguration.ValidIssuer
 - uid: VaraniumSharp.Monolith.Interfaces.HostSetup
@@ -1115,6 +1177,7 @@ references:
   name: Configuration
   href: api/VaraniumSharp.Monolith.Interfaces.HostSetup.IOwinStartup.html#VaraniumSharp_Monolith_Interfaces_HostSetup_IOwinStartup_Configuration_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.HostSetup.IOwinStartup.Configuration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.HostSetup.IOwinStartup.Configuration
   nameWithType: IOwinStartup.Configuration
 - uid: VaraniumSharp.Monolith.Interfaces.IHostConfiguration
@@ -1133,6 +1196,7 @@ references:
   name: Host
   href: api/VaraniumSharp.Monolith.Interfaces.IHostConfiguration.html#VaraniumSharp_Monolith_Interfaces_IHostConfiguration_Host_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.IHostConfiguration.Host
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.IHostConfiguration.Host
   nameWithType: IHostConfiguration.Host
 - uid: VaraniumSharp.Monolith.Interfaces.IHostConfiguration.HostUrl
@@ -1145,6 +1209,7 @@ references:
   name: HostUrl
   href: api/VaraniumSharp.Monolith.Interfaces.IHostConfiguration.html#VaraniumSharp_Monolith_Interfaces_IHostConfiguration_HostUrl_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.IHostConfiguration.HostUrl
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.IHostConfiguration.HostUrl
   nameWithType: IHostConfiguration.HostUrl
 - uid: VaraniumSharp.Monolith.Interfaces.IHostConfiguration.Port
@@ -1157,6 +1222,7 @@ references:
   name: Port
   href: api/VaraniumSharp.Monolith.Interfaces.IHostConfiguration.html#VaraniumSharp_Monolith_Interfaces_IHostConfiguration_Port_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.IHostConfiguration.Port
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.IHostConfiguration.Port
   nameWithType: IHostConfiguration.Port
 - uid: VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration
@@ -1175,6 +1241,7 @@ references:
   name: ApiToken
   href: api/VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.html#VaraniumSharp_Monolith_Interfaces_IPushoverConfiguration_ApiToken_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.ApiToken
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.ApiToken
   nameWithType: IPushoverConfiguration.ApiToken
 - uid: VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.DefaultSendKey
@@ -1187,6 +1254,7 @@ references:
   name: DefaultSendKey
   href: api/VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.html#VaraniumSharp_Monolith_Interfaces_IPushoverConfiguration_DefaultSendKey_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.DefaultSendKey
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.DefaultSendKey
   nameWithType: IPushoverConfiguration.DefaultSendKey
 - uid: VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.IsEnabled
@@ -1199,6 +1267,7 @@ references:
   name: IsEnabled
   href: api/VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.html#VaraniumSharp_Monolith_Interfaces_IPushoverConfiguration_IsEnabled_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.IsEnabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.IPushoverConfiguration.IsEnabled
   nameWithType: IPushoverConfiguration.IsEnabled
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration
@@ -1217,6 +1286,7 @@ references:
   name: Description
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.html#VaraniumSharp_Monolith_Interfaces_ITopShelfConfiguration_Description_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.Description
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.Description
   nameWithType: ITopShelfConfiguration.Description
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.DisplayName
@@ -1229,6 +1299,7 @@ references:
   name: DisplayName
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.html#VaraniumSharp_Monolith_Interfaces_ITopShelfConfiguration_DisplayName_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.DisplayName
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.DisplayName
   nameWithType: ITopShelfConfiguration.DisplayName
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.Name
@@ -1241,6 +1312,7 @@ references:
   name: Name
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.html#VaraniumSharp_Monolith_Interfaces_ITopShelfConfiguration_Name_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.Name
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.Name
   nameWithType: ITopShelfConfiguration.Name
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.StartMode
@@ -1253,6 +1325,7 @@ references:
   name: StartMode
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.html#VaraniumSharp_Monolith_Interfaces_ITopShelfConfiguration_StartMode_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.StartMode
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfConfiguration.StartMode
   nameWithType: ITopShelfConfiguration.StartMode
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfService
@@ -1271,6 +1344,7 @@ references:
   name: HostConfiguration
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfService.html#VaraniumSharp_Monolith_Interfaces_ITopShelfService_HostConfiguration_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfService.HostConfiguration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfService.HostConfiguration
   nameWithType: ITopShelfService.HostConfiguration
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfService.Start
@@ -1283,6 +1357,7 @@ references:
   name: Start
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfService.html#VaraniumSharp_Monolith_Interfaces_ITopShelfService_Start_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfService.Start
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfService.Start
   nameWithType: ITopShelfService.Start
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfService.Stop
@@ -1295,6 +1370,7 @@ references:
   name: Stop
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfService.html#VaraniumSharp_Monolith_Interfaces_ITopShelfService_Stop_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfService.Stop
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfService.Stop
   nameWithType: ITopShelfService.Stop
 - uid: VaraniumSharp.Monolith.Interfaces.ITopShelfService.TopShelfConfiguration
@@ -1307,6 +1383,7 @@ references:
   name: TopShelfConfiguration
   href: api/VaraniumSharp.Monolith.Interfaces.ITopShelfService.html#VaraniumSharp_Monolith_Interfaces_ITopShelfService_TopShelfConfiguration_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.ITopShelfService.TopShelfConfiguration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.ITopShelfService.TopShelfConfiguration
   nameWithType: ITopShelfService.TopShelfConfiguration
 - uid: VaraniumSharp.Monolith.Interfaces.Notifications
@@ -1331,6 +1408,7 @@ references:
   name: IsEnabled
   href: api/VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.html#VaraniumSharp_Monolith_Interfaces_Notifications_IPushoverNotifier_IsEnabled_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.IsEnabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.IsEnabled
   nameWithType: IPushoverNotifier.IsEnabled
 - uid: VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.SendNotification(System.String,System.String)
@@ -1349,6 +1427,7 @@ references:
   name: SendNotification
   href: api/VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.html#VaraniumSharp_Monolith_Interfaces_Notifications_IPushoverNotifier_SendNotification_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.SendNotification
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Notifications.IPushoverNotifier.SendNotification
   nameWithType: IPushoverNotifier.SendNotification
 - uid: VaraniumSharp.Monolith.Interfaces.Security
@@ -1373,6 +1452,7 @@ references:
   name: InitAsync
   href: api/VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.html#VaraniumSharp_Monolith_Interfaces_Security_IOAuthTokenValidator_InitAsync_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.InitAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.InitAsync
   nameWithType: IOAuthTokenValidator.InitAsync
 - uid: VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.ValidateToken(System.String)
@@ -1385,6 +1465,7 @@ references:
   name: ValidateToken
   href: api/VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.html#VaraniumSharp_Monolith_Interfaces_Security_IOAuthTokenValidator_ValidateToken_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.ValidateToken
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Security.IOAuthTokenValidator.ValidateToken
   nameWithType: IOAuthTokenValidator.ValidateToken
 - uid: VaraniumSharp.Monolith.Interfaces.Wrappers
@@ -1409,6 +1490,7 @@ references:
   name: Configuration
   href: api/VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.html#VaraniumSharp_Monolith_Interfaces_Wrappers_IPushoverWrapper_Configuration_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.Configuration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.Configuration
   nameWithType: IPushoverWrapper.Configuration
 - uid: VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.Push(System.String,System.String,System.String,System.String)
@@ -1421,6 +1503,7 @@ references:
   name: Push
   href: api/VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.html#VaraniumSharp_Monolith_Interfaces_Wrappers_IPushoverWrapper_Push_
   commentId: Overload:VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.Push
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Interfaces.Wrappers.IPushoverWrapper.Push
   nameWithType: IPushoverWrapper.Push
 - uid: VaraniumSharp.Monolith.NancyModules
@@ -1445,6 +1528,7 @@ references:
   name: HealthModule
   href: api/VaraniumSharp.Monolith.NancyModules.HealthModule.html#VaraniumSharp_Monolith_NancyModules_HealthModule__ctor_
   commentId: Overload:VaraniumSharp.Monolith.NancyModules.HealthModule.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.NancyModules.HealthModule.HealthModule
   nameWithType: HealthModule.HealthModule
 - uid: VaraniumSharp.Monolith.NancyModules.HealthModule.HealthResult
@@ -1457,6 +1541,7 @@ references:
   name: HealthResult
   href: api/VaraniumSharp.Monolith.NancyModules.HealthModule.html#VaraniumSharp_Monolith_NancyModules_HealthModule_HealthResult_
   commentId: Overload:VaraniumSharp.Monolith.NancyModules.HealthModule.HealthResult
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.NancyModules.HealthModule.HealthResult
   nameWithType: HealthModule.HealthResult
 - uid: VaraniumSharp.Monolith.Notifications
@@ -1481,6 +1566,7 @@ references:
   name: PushoverNotifier
   href: api/VaraniumSharp.Monolith.Notifications.PushoverNotifier.html#VaraniumSharp_Monolith_Notifications_PushoverNotifier__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Notifications.PushoverNotifier.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Notifications.PushoverNotifier.PushoverNotifier
   nameWithType: PushoverNotifier.PushoverNotifier
 - uid: VaraniumSharp.Monolith.Notifications.PushoverNotifier.IsEnabled
@@ -1493,6 +1579,7 @@ references:
   name: IsEnabled
   href: api/VaraniumSharp.Monolith.Notifications.PushoverNotifier.html#VaraniumSharp_Monolith_Notifications_PushoverNotifier_IsEnabled_
   commentId: Overload:VaraniumSharp.Monolith.Notifications.PushoverNotifier.IsEnabled
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Notifications.PushoverNotifier.IsEnabled
   nameWithType: PushoverNotifier.IsEnabled
 - uid: VaraniumSharp.Monolith.Notifications.PushoverNotifier.SendNotification(System.String,System.String)
@@ -1511,6 +1598,7 @@ references:
   name: SendNotification
   href: api/VaraniumSharp.Monolith.Notifications.PushoverNotifier.html#VaraniumSharp_Monolith_Notifications_PushoverNotifier_SendNotification_
   commentId: Overload:VaraniumSharp.Monolith.Notifications.PushoverNotifier.SendNotification
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Notifications.PushoverNotifier.SendNotification
   nameWithType: PushoverNotifier.SendNotification
 - uid: VaraniumSharp.Monolith.Security
@@ -1535,6 +1623,7 @@ references:
   name: OAuthTokenValidator
   href: api/VaraniumSharp.Monolith.Security.OAuthTokenValidator.html#VaraniumSharp_Monolith_Security_OAuthTokenValidator__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Security.OAuthTokenValidator.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Security.OAuthTokenValidator.OAuthTokenValidator
   nameWithType: OAuthTokenValidator.OAuthTokenValidator
 - uid: VaraniumSharp.Monolith.Security.OAuthTokenValidator.InitAsync
@@ -1547,6 +1636,7 @@ references:
   name: InitAsync
   href: api/VaraniumSharp.Monolith.Security.OAuthTokenValidator.html#VaraniumSharp_Monolith_Security_OAuthTokenValidator_InitAsync_
   commentId: Overload:VaraniumSharp.Monolith.Security.OAuthTokenValidator.InitAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Security.OAuthTokenValidator.InitAsync
   nameWithType: OAuthTokenValidator.InitAsync
 - uid: VaraniumSharp.Monolith.Security.OAuthTokenValidator.ValidateToken(System.String)
@@ -1559,6 +1649,7 @@ references:
   name: ValidateToken
   href: api/VaraniumSharp.Monolith.Security.OAuthTokenValidator.html#VaraniumSharp_Monolith_Security_OAuthTokenValidator_ValidateToken_
   commentId: Overload:VaraniumSharp.Monolith.Security.OAuthTokenValidator.ValidateToken
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Security.OAuthTokenValidator.ValidateToken
   nameWithType: OAuthTokenValidator.ValidateToken
 - uid: VaraniumSharp.Monolith.Security.StatelessOAuthValidation
@@ -1577,6 +1668,7 @@ references:
   name: UserStatelessOAuthTokenValidation
   href: api/VaraniumSharp.Monolith.Security.StatelessOAuthValidation.html#VaraniumSharp_Monolith_Security_StatelessOAuthValidation_UserStatelessOAuthTokenValidation_
   commentId: Overload:VaraniumSharp.Monolith.Security.StatelessOAuthValidation.UserStatelessOAuthTokenValidation
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Security.StatelessOAuthValidation.UserStatelessOAuthTokenValidation
   nameWithType: StatelessOAuthValidation.UserStatelessOAuthTokenValidation
 - uid: VaraniumSharp.Monolith.Security.ValidationHandler
@@ -1595,6 +1687,7 @@ references:
   name: ValidationHandler
   href: api/VaraniumSharp.Monolith.Security.ValidationHandler.html#VaraniumSharp_Monolith_Security_ValidationHandler__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Security.ValidationHandler.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Security.ValidationHandler.ValidationHandler
   nameWithType: ValidationHandler.ValidationHandler
 - uid: VaraniumSharp.Monolith.Security.ValidationHandler.ValidateUser(System.String)
@@ -1607,6 +1700,7 @@ references:
   name: ValidateUser
   href: api/VaraniumSharp.Monolith.Security.ValidationHandler.html#VaraniumSharp_Monolith_Security_ValidationHandler_ValidateUser_
   commentId: Overload:VaraniumSharp.Monolith.Security.ValidationHandler.ValidateUser
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Security.ValidationHandler.ValidateUser
   nameWithType: ValidationHandler.ValidateUser
 - uid: VaraniumSharp.Monolith.Wrappers
@@ -1631,6 +1725,7 @@ references:
   name: PushoverWrapper
   href: api/VaraniumSharp.Monolith.Wrappers.PushoverWrapper.html#VaraniumSharp_Monolith_Wrappers_PushoverWrapper__ctor_
   commentId: Overload:VaraniumSharp.Monolith.Wrappers.PushoverWrapper.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Wrappers.PushoverWrapper.PushoverWrapper
   nameWithType: PushoverWrapper.PushoverWrapper
 - uid: VaraniumSharp.Monolith.Wrappers.PushoverWrapper.Configuration
@@ -1643,6 +1738,7 @@ references:
   name: Configuration
   href: api/VaraniumSharp.Monolith.Wrappers.PushoverWrapper.html#VaraniumSharp_Monolith_Wrappers_PushoverWrapper_Configuration_
   commentId: Overload:VaraniumSharp.Monolith.Wrappers.PushoverWrapper.Configuration
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Wrappers.PushoverWrapper.Configuration
   nameWithType: PushoverWrapper.Configuration
 - uid: VaraniumSharp.Monolith.Wrappers.PushoverWrapper.Push(System.String,System.String,System.String,System.String)
@@ -1655,5 +1751,6 @@ references:
   name: Push
   href: api/VaraniumSharp.Monolith.Wrappers.PushoverWrapper.html#VaraniumSharp_Monolith_Wrappers_PushoverWrapper_Push_
   commentId: Overload:VaraniumSharp.Monolith.Wrappers.PushoverWrapper.Push
+  isSpec: "True"
   fullName: VaraniumSharp.Monolith.Wrappers.PushoverWrapper.Push
   nameWithType: PushoverWrapper.Push
